@@ -86,3 +86,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+#archivo para las plantillas
+TEMPLATE_DIRS=(
+    os.path.join(os.path.dirname(__file__),'../plantillas'),
+)
+
