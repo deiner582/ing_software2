@@ -1,0 +1,14 @@
+#iniciar un repositorio
+git init
+
+#agrega un archivo
+git add <nombre_archivo> 
+
+#confirmar archivos a agregar
+git commit -m "comentario" 
+
+#poner los archivos en el repositorio
+git push -u origin master
+
+ #actualizar repositorioa su ultimo commit
+git pull
