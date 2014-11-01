@@ -4,5 +4,15 @@ from transporte.models import *
 # Create your views here.
 
 def vista_index(request):
-    auto=autobus.objects.all()
-    return render_to_response('index.html',{'a':auto})
+
+    return render_to_response('index.html',locals())
+
+def vista_buses(request):
+    return render_to_response('buses.html')
+
+def vista_conductores(request):
+    cond=conductor.objects.all()
+    return  render_to_response('conductores.html',locals())
+
+def vista_registro(request):
+    return render_to_response('registro.html')

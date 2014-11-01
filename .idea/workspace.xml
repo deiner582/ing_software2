@@ -26,7 +26,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/transporte/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="287" selection-end="287" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="1350">
+            <state line="33" column="25" selection-start="929" selection-end="929" vertical-scroll-proportion="0.0" vertical-offset="158" max-vertical-offset="1350">
               <folding />
             </state>
           </provider>
@@ -44,7 +44,7 @@
       <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/principal/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="22" selection-start="2129" selection-end="2129" vertical-scroll-proportion="0.0" vertical-offset="1058" max-vertical-offset="1782">
+            <state line="48" column="0" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.0" vertical-offset="846" max-vertical-offset="1890">
               <folding />
             </state>
           </provider>
@@ -62,7 +62,7 @@
       <file leaf-file-name="registro.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plantillas/registro.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3528">
+            <state line="187" column="0" selection-start="5941" selection-end="5941" vertical-scroll-proportion="0.0" vertical-offset="2880" max-vertical-offset="3474">
               <folding />
             </state>
           </provider>
@@ -71,18 +71,38 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/principal/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="52" selection-start="252" selection-end="252" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="252">
+            <state line="13" column="8" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="414">
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
+                <marker date="1414813163168" expanded="true" signature="168:222" placeholder="..." />
+                <marker date="1414813163168" expanded="true" signature="249:293" placeholder="..." />
+                <marker date="1414813163168" expanded="true" signature="326:419" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plantillas/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="18" selection-start="2337" selection-end="2337" vertical-scroll-proportion="0.625" vertical-offset="882" max-vertical-offset="4104">
+            <state line="84" column="17" selection-start="2675" selection-end="2675" vertical-scroll-proportion="-9.111111" vertical-offset="1266" max-vertical-offset="4104">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="conductores.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/plantillas/conductores.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="73" column="12" selection-start="2367" selection-end="2367" vertical-scroll-proportion="0.34375" vertical-offset="1116" max-vertical-offset="3222">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="buses.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plantillas/buses.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="449" column="0" selection-start="13764" selection-end="13764" vertical-scroll-proportion="0.0" vertical-offset="8082" max-vertical-offset="8442">
               <folding />
             </state>
           </provider>
@@ -91,10 +111,8 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/principal/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
-              </folding>
+            <state line="8" column="4" selection-start="339" selection-end="339" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="360">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -110,20 +128,23 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/transporte/admin.py" />
-        <option value="$PROJECT_DIR$/transporte/models.py" />
         <option value="$PROJECT_DIR$/transporte/views.py" />
-        <option value="$PROJECT_DIR$/principal/urls.py" />
         <option value="$PROJECT_DIR$/principal/settings.py" />
+        <option value="$PROJECT_DIR$/principal/urls.py" />
+        <option value="$PROJECT_DIR$/plantillas/registro.html" />
+        <option value="$PROJECT_DIR$/plantillas/buses.html" />
         <option value="$PROJECT_DIR$/principal/views.py" />
+        <option value="$PROJECT_DIR$/transporte/models.py" />
         <option value="$PROJECT_DIR$/plantillas/index.html" />
+        <option value="$PROJECT_DIR$/plantillas/conductores.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1301" />
-    <option name="height" value="772" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -209,6 +230,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="plantillas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="principal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="principal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="estaticos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -437,7 +472,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -477,6 +512,140 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/transporte/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1350">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transporte/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="288">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/principal/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1890">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/principal/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plantillas/registro.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="187" column="0" selection-start="5941" selection-end="5941" vertical-scroll-proportion="0.0" vertical-offset="2880" max-vertical-offset="3474">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/principal/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="8" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="414">
+          <folding>
+            <marker date="1414813163168" expanded="true" signature="168:222" placeholder="..." />
+            <marker date="1414813163168" expanded="true" signature="249:293" placeholder="..." />
+            <marker date="1414813163168" expanded="true" signature="326:419" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plantillas/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="222" column="0" selection-start="4320" selection-end="6278" vertical-scroll-proportion="0.0" vertical-offset="3456" max-vertical-offset="4104">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plantillas/conductores.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="0" selection-start="3383" selection-end="3383" vertical-scroll-proportion="0.0" vertical-offset="1530" max-vertical-offset="2970">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plantillas/buses.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="449" column="0" selection-start="13764" selection-end="13764" vertical-scroll-proportion="0.0" vertical-offset="8082" max-vertical-offset="8442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/principal/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="4" selection-start="339" selection-end="339" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transporte/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="287" selection-end="287" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="1350">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transporte/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="288">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/principal/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="22" selection-start="2129" selection-end="2129" vertical-scroll-proportion="0.0" vertical-offset="1058" max-vertical-offset="1782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/principal/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plantillas/registro.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3528">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/principal/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="52" selection-start="252" selection-end="252" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="252">
+          <folding>
+            <marker date="1414813163168" expanded="true" signature="168:222" placeholder="..." />
+            <marker date="1414813163168" expanded="true" signature="249:293" placeholder="..." />
+            <marker date="1414813163168" expanded="true" signature="326:419" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plantillas/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="18" selection-start="2337" selection-end="2337" vertical-scroll-proportion="0.0" vertical-offset="882" max-vertical-offset="4104">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/principal/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="288">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/transporte/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="66" column="26" selection-start="1856" selection-end="1856" vertical-scroll-proportion="0.0" vertical-offset="583" max-vertical-offset="1350">
@@ -551,21 +720,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/plantillas/README.TXT">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="599">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="599" />
       </provider>
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/principal/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/principal/__init__.py">
@@ -575,39 +733,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/principal/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="4" selection-start="339" selection-end="339" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plantillas/buses.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="449" column="0" selection-start="13764" selection-end="13764" vertical-scroll-proportion="0.0" vertical-offset="8082" max-vertical-offset="8442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/plantillas/registro.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3528">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/principal/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="22" selection-start="2129" selection-end="2129" vertical-scroll-proportion="0.0" vertical-offset="1058" max-vertical-offset="1782">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/transporte/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="287" selection-end="287" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="1350">
+        <state line="187" column="0" selection-start="5941" selection-end="5941" vertical-scroll-proportion="0.0" vertical-offset="2880" max-vertical-offset="3474">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/principal/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="52" selection-start="252" selection-end="252" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="252">
+        <state line="13" column="8" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1414813163168" expanded="true" signature="168:222" placeholder="..." />
+            <marker date="1414813163168" expanded="true" signature="249:293" placeholder="..." />
+            <marker date="1414813163168" expanded="true" signature="326:419" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/principal/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="0" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.0" vertical-offset="846" max-vertical-offset="1890">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transporte/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="25" selection-start="929" selection-end="929" vertical-scroll-proportion="0.0" vertical-offset="158" max-vertical-offset="1350">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plantillas/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="18" selection-start="2337" selection-end="2337" vertical-scroll-proportion="0.625" vertical-offset="882" max-vertical-offset="4104">
+        <state line="84" column="17" selection-start="2675" selection-end="2675" vertical-scroll-proportion="-9.111111" vertical-offset="1266" max-vertical-offset="4104">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plantillas/conductores.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="12" selection-start="2367" selection-end="2367" vertical-scroll-proportion="0.34375" vertical-offset="1116" max-vertical-offset="3222">
           <folding />
         </state>
       </provider>
