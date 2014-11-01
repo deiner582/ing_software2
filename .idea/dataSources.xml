@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="4103862283">
+  <component name="DataSourceManagerImpl" format="xml" hash="21240268">
     <data-source source="LOCAL" name="Django default" uuid="8b642916-f797-45d3-894f-17c366d92f1a">
-      <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/transporte.db</jdbc-url>
-      <libraries />
+      <jdbc-url>jdbc:sqlite:D:\Proyectos\ing_software2\transporte.db</jdbc-url>
+      <libraries>
+        <library>
+          <url>file://$USER_HOME$/.PyCharm30/config/jdbc-drivers/xerial-sqlite-license.txt</url>
+        </library>
+        <library>
+          <url>file://$USER_HOME$/.PyCharm30/config/jdbc-drivers/sqlite-jdbc-3.7.6.3-20110609.081603-3.jar</url>
+        </library>
+      </libraries>
     </data-source>
   </component>
 </project>
