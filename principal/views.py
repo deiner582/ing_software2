@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.shortcuts import render_to_response
+from django.http import HttpResponseRedirect
 from transporte.models import *
+from forms import *
 # Create your views here.
 
 def vista_index(request):
@@ -17,7 +19,5 @@ def vista_conductores(request):
 def vista_registro(request):
     return render_to_response('registro.html')
 
-#Prueba de github proyeto de ing de software
-#Prueba de github proyeto de ing de software
-#Prueba de github proyeto de ing de software
-#Prueba de github proyeto de ing de software
+
+
