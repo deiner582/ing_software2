@@ -3,6 +3,7 @@ from django.contrib import admin
 
 urlpatterns = patterns('',
     # Examples:
+    url(r'^ckeditor/', include('ckeditor.urls')),
     url(r'^$', 'principal.views.vista_index', name='Home'),
     url(r'^buses/','principal.views.vista_buses',name='buses'),
     url(r'^conductores/','principal.views.vista_conductores',name='conductores'),
