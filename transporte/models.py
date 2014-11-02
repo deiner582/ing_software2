@@ -68,7 +68,7 @@ class Trayecto(models.Model):
     def __unicode__(self):
         return self.codigo
 
-class usuario(persona):
+class Usuario(Persona):
     puntosAcumulados=models.IntegerField()
 
     def __unicode__(self):

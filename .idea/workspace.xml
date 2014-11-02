@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff921b50-94ca-4768-89d6-85f4dbc4222e" name="Default" comment="" />
+    <list default="true" id="ff921b50-94ca-4768-89d6-85f4dbc4222e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/transporte/admin.py" afterPath="$PROJECT_DIR$/transporte/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/transporte/models.py" afterPath="$PROJECT_DIR$/transporte/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/principal/views.py" afterPath="$PROJECT_DIR$/principal/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="principal.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,12 +27,39 @@
     <favorites_list name="principal" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/transporte/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="28" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/transporte/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="74" column="27" selection-start="2092" selection-end="2092" vertical-scroll-proportion="0.7380137" vertical-offset="810" max-vertical-offset="1394">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -38,11 +70,11 @@
         <option value="$PROJECT_DIR$/plantillas/buses.html" />
         <option value="$PROJECT_DIR$/plantillas/index.html" />
         <option value="$PROJECT_DIR$/plantillas/conductores.html" />
+        <option value="$PROJECT_DIR$/plantillas/registro.html" />
+        <option value="$PROJECT_DIR$/principal/forms.py" />
         <option value="$PROJECT_DIR$/transporte/models.py" />
         <option value="$PROJECT_DIR$/transporte/admin.py" />
-        <option value="$PROJECT_DIR$/plantillas/registro.html" />
         <option value="$PROJECT_DIR$/principal/views.py" />
-        <option value="$PROJECT_DIR$/principal/forms.py" />
       </list>
     </option>
   </component>
@@ -83,13 +115,13 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="principal" />
+              <option name="myItemId" value="ing_software2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="principal" />
+              <option name="myItemId" value="ing_software2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -99,7 +131,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="principal" />
+              <option name="myItemId" value="ing_software2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -113,7 +145,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="principal" />
+              <option name="myItemId" value="ing_software2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -122,20 +154,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="principal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="principal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ing_software2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plantillas" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -146,13 +164,13 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -164,7 +182,7 @@
       <recent name="$PROJECT_DIR$/principal" />
     </key>
   </component>
-  <component name="RunManager" selected="Django server.principal">
+  <component name="RunManager" selected="Django server.ing_software2">
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -249,27 +267,7 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="principal" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -295,7 +293,27 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="principal" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -344,6 +362,29 @@
       <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
+    <configuration default="false" name="ing_software2" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ing_software2" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method />
+    </configuration>
     <configuration default="false" name="principal" type="Python.DjangoServer" factoryName="Django server">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -370,8 +411,9 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Django server.principal" />
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Django server.ing_software2" />
+      <item index="1" class="java.lang.String" itemvalue="Django server.principal" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -385,7 +427,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -424,13 +466,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/principal/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="17" selection-start="1028" selection-end="1028" vertical-scroll-proportion="0.0" vertical-offset="205" max-vertical-offset="1620">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://DjangoModelDependency/#principal">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -440,8 +475,8 @@
             <node x="" y="">transporte.models.persona</node>
             <node x="" y="">transporte.models.paradas</node>
             <node x="" y="">transporte.models.trayecto</node>
-            <node x="" y="">transporte.models.control_mecanico</node>
             <node x="" y="">transporte.models.categoria</node>
+            <node x="" y="">transporte.models.control_mecanico</node>
             <node x="" y="">transporte.models.autobus</node>
             <node x="" y="">transporte.models.conductor</node>
           </nodes>
@@ -479,14 +514,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/principal/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="1" selection-start="1832" selection-end="1832" vertical-scroll-proportion="1.6267123" vertical-offset="206" max-vertical-offset="1785">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/transporte/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="27" selection-start="310" selection-end="310" vertical-scroll-proportion="0.26198632" vertical-offset="0" max-vertical-offset="584" />
+        <state line="68" column="1" selection-start="1832" selection-end="1832" vertical-scroll-proportion="1.6267123" vertical-offset="206" max-vertical-offset="1785" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plantillas/blog.html">
@@ -506,23 +534,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/principal/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="53" selection-start="374" selection-end="388" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
-          <folding />
-        </state>
+        <state line="8" column="53" selection-start="374" selection-end="388" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/principal/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="25" selection-end="25" vertical-scroll-proportion="0.02910959" vertical-offset="0" max-vertical-offset="584">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="25" selection-end="25" vertical-scroll-proportion="0.02910959" vertical-offset="0" max-vertical-offset="584" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plantillas/registro.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="34" selection-start="2297" selection-end="2297" vertical-scroll-proportion="0.2825688" vertical-offset="985" max-vertical-offset="3587">
-          <folding />
-        </state>
+        <state line="67" column="34" selection-start="2297" selection-end="2297" vertical-scroll-proportion="0.2825688" vertical-offset="985" max-vertical-offset="3587" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/principal/views.py">
@@ -534,9 +556,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/transporte/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="63" selection-end="63" vertical-scroll-proportion="0.08732877" vertical-offset="0" max-vertical-offset="584">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transporte/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="28" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/transporte/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="64" selection-start="150" selection-end="150" vertical-scroll-proportion="-1.2414384" vertical-offset="793" max-vertical-offset="1377">
+        <state line="74" column="27" selection-start="2092" selection-end="2092" vertical-scroll-proportion="0.7380137" vertical-offset="810" max-vertical-offset="1394">
           <folding />
         </state>
       </provider>

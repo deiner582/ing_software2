@@ -18,9 +18,3 @@ def vista_conductores(request):
 
 def vista_registro(request):
     return render_to_response('registro.html')
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> f4bc4f6a7143e7ee55f3eaad9adad960198df53b
