@@ -69,6 +69,7 @@
 	</div>
 
 	<section id="team-members">
+
         {% if cond|length_is:"0" %}
            <div class="alert alert-success">
 
@@ -90,10 +91,10 @@
 
             <span class="label label-success">Descripcion:</span>
 			<p class="member-bio">
-				Cupcake ipsum dolor sit amet wafer gummi bears pudding applicake. Jujubes brownie powder. Sweet roll powder gingerbread gummies. Cupcake ice cream sweet roll pie lollipop. Jelly-o jelly-o apple pie chupa chups jelly jujubes gingerbread. Icing carrot cake powder chupa chups. Pudding sweet roll jelly-o muffin faworki biscuit. Marzipan marshmallow cake tiramisu caramels bear claw carrot cake cotton candy. Toffee danish sweet roll. Cookie topping powder toffee ice cream muffin dragée. Soufflé caramels apple pie chocolate cake cookie cake. Macaroon tiramisu halvah soufflé. Dessert toffee halvah chocolate cake bear claw.
+                 {{ c.descripcion|safe }}
 			</p>
 			<div class="member-avatar">
-				<img src="http://placehold.it/130x96" alt="">
+				{{ c.foto|safe }}
 			</div>
 
 

@@ -26,7 +26,18 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CKEDITOR_MEDIA_PREFIX = "/static/ckeditor/" #copiar ``media/ckeditor``
+CKEDITOR_UPLOAD_PATH = "/media/"# Subir archivos
 
+CKEDITOR_CONFIGS=  {
+  'default': {
+          'toolbar': 'Advanced',
+          'height': 800,
+          'width': 800,
+
+
+    },
+}
 # Application definition
 
 INSTALLED_APPS = (
@@ -39,6 +50,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'transporte',
+     'ckeditor',
 
 )
 
