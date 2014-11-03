@@ -13,13 +13,13 @@ class Persona(models.Model):
 class Autobus(models.Model):
     placa=models.TextField(max_length=6,primary_key=True)
     marca=models.TextField(max_length=50)
+    imagenBus=models.ImageField(upload_to='estaticos/img')
     peso=models.FloatField()
     velocidad_max=models.FloatField(max_length=3)
     precio=models.FloatField()
+
     def __unicode__(self):
         return self.placa
-
-
 
 class Control_mecanico(models.Model):
     codigo=models.TextField(max_length=20,primary_key=True)
@@ -42,7 +42,6 @@ class Conductor(Persona):
     def __unicode__(self):
         return (self.nombres + " "+ self.apellidos)
 
-
 class Paradas(models.Model):
     codigo=models.TextField(max_length=20,primary_key=True)
     ciudad=models.TextField(max_length=20)
@@ -51,7 +50,6 @@ class Paradas(models.Model):
 
     def __unicode__(self):
         return (self.codigo+ " - "+ self.ciudad)
-
 
 class Categoria(models.Model):
     codigo=models.TextField(max_length=20,primary_key=True)
@@ -68,7 +66,6 @@ class Trayecto(models.Model):
 
     def __unicode__(self):
         return self.codigo
-
 
 class Usuario(Persona):
     username=models.TextField()
