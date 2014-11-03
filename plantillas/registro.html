@@ -65,24 +65,11 @@
 
 	<div class="hero-unit">
 		<p><strong>Registro de Clientes</strong> </p>
-        <form role="form" action="">
-              <div class="form-group">
-                <label for="Identifi">Indentificación</label>
-                <input type="text" class="form-control" id="Identifi" placeholder="Número de Documento">
-              </div>
-              <div class="form-group">
-                <label for="Nombres">Nombres</label>
-                <input type="text" class="form-control" id="Nombres" placeholder="Primer y Segundo Nombre">
-              </div>
-              <div class="form-group">
-                <label for="Apellidos">Apellidos</label>
-                <input type="text" class="form-control" id="Apellidos" placeholder="Apellidos">
-              </div>
-              <div class="form-group">
-                <label for="FechaNac">Fecha de Nacimiento</label>
-                <input type="date" class="form-control" id="FechaNac">
-              </div>
-              <button type="submit" class="btn btn-default">Enviar</button>
+
+        <form action="." method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Registrarse"/>
         </form>
 
 	</div>
