@@ -8,11 +8,12 @@ from forms import *
 # Create your views here.
 
 def vista_index(request):
-
+    iniciar_sesion=Formulario_iniciar_sesion()
     return render_to_response('index.html',locals())
 
 def vista_buses(request):
-    return render_to_response('buses.html')
+    buses=Autobus.objects.all()
+    return render_to_response('buses.html',locals())
 
 def vista_conductores(request):
     cond=Conductor.objects.all()
@@ -35,6 +36,8 @@ def vista_registro(request):
                 usuario.nombres = formulario.cleaned_data['nombre']
                 usuario.apellidos = formulario.cleaned_data['apellido']
                 usuario.fecha_nacimiento = formulario.cleaned_data['fecha_nacimiento']
+                usuario.username = formulario.cleaned_data['Username']
+                usuario.password = formulario.cleaned_data['Password']
                 usuario.puntosAcumulados = 0
                 usuario.save()
                 enviado = True

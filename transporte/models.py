@@ -40,16 +40,17 @@ class Conductor(Persona):
     sueldo=models.FloatField()
 
     def __unicode__(self):
-        return self.nombres
+        return (self.nombres + " "+ self.apellidos)
 
 
 class Paradas(models.Model):
     codigo=models.TextField(max_length=20,primary_key=True)
+    ciudad=models.TextField(max_length=20)
     hora_salida=models.TimeField()
     hora_llegada=models.TimeField()
 
     def __unicode__(self):
-        return self.codigo
+        return (self.codigo+ " - "+ self.ciudad)
 
 
 class Categoria(models.Model):
@@ -58,20 +59,35 @@ class Categoria(models.Model):
     costo=models.FloatField()
 
     def __unicode__(self):
-        return self.codigo
+        return self.nombre
 
 class Trayecto(models.Model):
     codigo=models.TextField(max_length=20,primary_key=True)
-    cod_categoria=models.ForeignKey(Categoria)
+    categoria_trayecto=models.ForeignKey(Categoria)
     paradas_trayecto=models.ManyToManyField(Paradas)
 
     def __unicode__(self):
         return self.codigo
 
+
 class Usuario(Persona):
+    username=models.TextField()
+    password=models.TextField()
     puntosAcumulados=models.IntegerField()
 
     def __unicode__(self):
-        return self.nombres
+        return (self.nombres +" "+ self.apellidos)
+
+class Billetes(models.Model):
+    codigo=models.TextField(max_length=20,primary_key=True)
+    usuario=models.ForeignKey(Usuario)
+    autobus=models.ForeignKey(Autobus)
+    parada_origen=models.ForeignKey(Paradas,related_name="parada origen")
+    parada_destino=models.ForeignKey(Paradas,related_name="parada destino")
+    fecha_compra=models.DateTimeField()
+
+    def __unicode__(self):
+        return  self.codigo
+
 
 

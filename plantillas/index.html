@@ -25,12 +25,14 @@
 <body>
 
 	<!-- Header
+
 	================================================== -->
 	<header id="header">
 
 		<!-- Navigation
 		================================================== -->
 		<nav class="navbar">
+
 			<div class="navbar-inner">
 				<div class="container">
 					<!-- Logo -->
@@ -38,7 +40,7 @@
 						Trasn India
 						
 					</a>
-					
+
 					<ul class="nav">
 						<li><a href="/" title="Home">Home</a></li>
 						<li><a href="/buses" title="Our work">Buses</a></li>
@@ -51,6 +53,20 @@
 							</ul>
 						</li>
 						<li><a href="/registro" title="Contact us">Registrarse</a></li>
+                             <li class="dropdown">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Iniciar Sesion</a>
+            <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+             <form action="." method="POST">
+               {% csrf_token %}
+               {{ iniciar_sesion.as_p }}
+               <input type="submit" value="Iniciar"/>
+             </form>
+
+
+
+
+            </div>
+          </li>
 					</ul>
 				</div><!-- end .container -->
 			</div><!-- end .navbar-inner -->
@@ -66,9 +82,7 @@
 	<div class="hero-unit">
 		<p>Sigale que si hay puesto !</p>
 	</div>
-  {% for i in a %}
-        {{ i.placa }}
-        {% endfor %}
+
 </section><!-- end .container -->
 
 <div class="lead-container">

@@ -67,12 +67,11 @@
 		<p><strong>Registro de Clientes</strong> </p>
 
         <form action="." method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            {% if registrado%}
+             {% if registrado%}
                 <p class="text-danger">{{ usuario }} ya se encuentra registrado</p>
             {% endif %}
-
+            {% csrf_token %}
+            {{ form.as_p }}
             <input type="submit" value="Registrarse"/>
         </form>
 
