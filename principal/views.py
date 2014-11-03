@@ -35,3 +35,7 @@ def vista_registro(request):
         formulario = FormRegistrarUsuario()
     ctx = {'form':formulario}
     return render_to_response('registro.html',ctx,context_instance=RequestContext(request))
+
+def vista_billetes(request):
+    categoria=Categoria.objects.all()
+    return render_to_response('billetes.html',locals())
