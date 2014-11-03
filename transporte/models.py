@@ -13,7 +13,7 @@ class Persona(models.Model):
 class Autobus(models.Model):
     placa=models.TextField(max_length=6,primary_key=True)
     marca=models.TextField(max_length=50)
-    imagenBus=models.ImageField(upload_to='estaticos/img')
+    imagenBus=models.ImageField()
     peso=models.FloatField()
     velocidad_max=models.FloatField(max_length=3)
     precio=models.FloatField()

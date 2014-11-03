@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="not-ie" lang="en"> 
+<html class="not-ie" lang="en">
 <head>
 
 	<!-- Basic meta tags -->
@@ -12,15 +12,15 @@
 	<!-- Styles -->
 	<link href="../estaticos/css/style.css" rel="stylesheet" type="text/css" />
 	<link href="../estaticos/css/font-awesome/font-awesome.css" rel="stylesheet" type="text/css" />
-	
-	
+
+
 	<!-- Web Fonts  -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
 
 	<!-- Javascript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="../estaticos/js/jquery-1.7.2.min.js"><\/script>')</script>
-	
+
 	</head>
 <body>
 
@@ -38,23 +38,34 @@
 					<!-- Logo -->
 					<a class="brand" href="/">
 						Trasn India
-						
+
 					</a>
 
 					<ul class="nav">
-						<li><a href="/" title="Home">Home</a></li>
-						<li><a href="/buses" title="Our work">Buses</a></li>
-						<li><a href="/conductores" title="Our team">Conductores</a></li>
-						<li class="dropdown">
-							<a href="components.html" title="Features">Features</a>
+						<li><a href="/" title="">Home</a></li>
+
+
+						<li class="dropdown active">
+							<a href="components.html" title="">Nuestra Empresa</a>
 							<!-- Dropdown menu -->
 							<ul>
-								<li><a href="components.html" title="">Components</a></li>
+								<li><a href="/buses" title="">Buses</a></li>
+						        <li><a href="/conductores" title="">Conductores</a></li>
+
 							</ul>
 						</li>
-						<li><a href="/registro" title="Contact us">Registrarse</a></li>
+                        <li class="dropdown active">
+							<a href="components.html" title="">Servicios</a>
+							<!-- Dropdown menu -->
+							<ul>
+								<li><a href="/billetes" title="">Venta de Billetes</a></li>
+
+
+							</ul>
+						</li>
+						<li><a href="/registro" title="">Sign up</a></li>
                              <li class="dropdown">
-            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Iniciar Sesion</a>
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign in</a>
             <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
              <form action="." method="POST">
                {% csrf_token %}
@@ -73,7 +84,6 @@
 		</nav>
 
 	</header>
-
 	<!-- Content
 	================================================== -->
 	<section id="content" class="container">

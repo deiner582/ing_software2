@@ -9,7 +9,7 @@ from forms import *
 
 def vista_index(request):
     iniciar_sesion=Formulario_iniciar_sesion()
-    return render_to_response('index.html',locals())
+    return render_to_response('index.html',locals(),context_instance=RequestContext(request))
 
 def vista_buses(request):
     buses=Autobus.objects.all()
@@ -47,3 +47,7 @@ def vista_registro(request):
         formulario = FormRegistrarUsuario()
     ctx = {'form':formulario,'registrado':usuarioRegistrado,'usuario':nomUsuario}
     return render_to_response('registro.html',ctx,context_instance=RequestContext(request))
+
+def vista_billetes(request):
+    categoria=Categoria.objects.all()
+    return render_to_response('billetes.html',locals())
