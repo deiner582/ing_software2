@@ -6,4 +6,4 @@ class FormRegistrarUsuario(forms.Form):
     identificacion = forms.IntegerField(widget=forms.TextInput())
     nombre = forms.CharField(widget=forms.TextInput())
     apellido = forms.CharField(widget=forms.TextInput())
-    fecha_nacimiento = forms.DateField(widget=forms.DateInput())
+    fecha_nacimiento = forms.DateField(widget=forms.DateInput(format='%d-%m-%Y'))

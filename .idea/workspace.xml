@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff921b50-94ca-4768-89d6-85f4dbc4222e" name="Default" comment="" />
+    <list default="true" id="ff921b50-94ca-4768-89d6-85f4dbc4222e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/transporte.db" afterPath="$PROJECT_DIR$/transporte.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/principal/forms.py" afterPath="$PROJECT_DIR$/principal/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plantillas/registro.html" afterPath="$PROJECT_DIR$/plantillas/registro.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/principal/views.py" afterPath="$PROJECT_DIR$/principal/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="principal.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,48 +29,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/transporte/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="28" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="289">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/transporte/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="27" selection-start="2092" selection-end="2092" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="1411">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="forms.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/principal/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="63" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="238">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/principal/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="40" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.65068495" vertical-offset="96" max-vertical-offset="680">
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="registro.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plantillas/registro.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="25" selection-start="2329" selection-end="2329" vertical-scroll-proportion="0.0" vertical-offset="1002" max-vertical-offset="3366">
+            <state line="8" column="38" selection-start="315" selection-end="324" vertical-scroll-proportion="0.20376712" vertical-offset="0" max-vertical-offset="584">
               <folding />
             </state>
           </provider>
@@ -94,11 +62,11 @@
         <option value="$PROJECT_DIR$/plantillas/buses.html" />
         <option value="$PROJECT_DIR$/plantillas/index.html" />
         <option value="$PROJECT_DIR$/plantillas/conductores.html" />
-        <option value="$PROJECT_DIR$/transporte/models.py" />
         <option value="$PROJECT_DIR$/transporte/admin.py" />
-        <option value="$PROJECT_DIR$/plantillas/registro.html" />
         <option value="$PROJECT_DIR$/principal/forms.py" />
         <option value="$PROJECT_DIR$/principal/views.py" />
+        <option value="$PROJECT_DIR$/plantillas/registro.html" />
+        <option value="$PROJECT_DIR$/transporte/models.py" />
       </list>
     </option>
   </component>
@@ -163,35 +131,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="transporte" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ing_software2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ing_software2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="principal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ing_software2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ing_software2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plantillas" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -465,14 +405,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2489019" sideWeight="0.6704918" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2489019" sideWeight="0.6704918" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -550,11 +490,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="641" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/principal/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="1" selection-start="1832" selection-end="1832" vertical-scroll-proportion="1.6267123" vertical-offset="206" max-vertical-offset="1785" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plantillas/blog.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6188" />
@@ -582,38 +517,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/transporte/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="28" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/transporte/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="27" selection-start="2092" selection-end="2092" vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="1394">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/principal/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="63" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+        <state line="10" column="28" selection-start="311" selection-end="311" vertical-scroll-proportion="0.26198632" vertical-offset="0" max-vertical-offset="584">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plantillas/registro.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="25" selection-start="2329" selection-end="2329" vertical-scroll-proportion="0.0" vertical-offset="1002" max-vertical-offset="3366">
+        <state line="72" column="38" selection-start="2430" selection-end="2430" vertical-scroll-proportion="-27.461538" vertical-offset="510" max-vertical-offset="2618">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/principal/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="40" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.65068495" vertical-offset="96" max-vertical-offset="680">
+        <state line="43" column="43" selection-start="1648" selection-end="1648" vertical-scroll-proportion="0.7380137" vertical-offset="300" max-vertical-offset="884">
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transporte/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="41" selection-start="513" selection-end="513" vertical-scroll-proportion="0.37842464" vertical-offset="0" max-vertical-offset="1394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/principal/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="3" selection-start="3" selection-end="3" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1989">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/principal/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="38" selection-start="315" selection-end="324" vertical-scroll-proportion="0.20376712" vertical-offset="0" max-vertical-offset="584">
+          <folding />
         </state>
       </provider>
     </entry>

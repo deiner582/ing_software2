@@ -69,59 +69,15 @@
         <form action="." method="POST">
             {% csrf_token %}
             {{ form.as_p }}
+            {% if registrado%}
+                <p class="text-danger">{{ usuario }} ya se encuentra registrado</p>
+            {% endif %}
+
             <input type="submit" value="Registrarse"/>
         </form>
 
 	</div>
-	
-	<div class="row">
-		<div class="span4 offset1">
-			<h3>Social networks</h3>
-			<br />
-			<p class="active lead">
-				<a class="social-network twitter"></a> &nbsp;
-				<a class="social-network facebook"></a> &nbsp;
-				<a class="social-network linkedin"></a> &nbsp;
-				<a class="social-network dribbble"></a> &nbsp;
-				<a class="social-network pinterest"></a>
-			</p>
-			<br />
-			<h3>Where to find us</h3>
-			<p class="lead">
-				1601ux California Ave, <br />
-				Palo Alto, California <br />
-				<a>Get Directions</a>
-			</p>
-		</div>
-		<div class="span6 pull1">
 
-			<h3>Contact us</h3><br />
-				<!-- Contact form
-				================================================== -->
-
-				<!-- form message -->
-				<div id="contact-form-response" class="alert hidden"></div>
-
-				<form id="contact-form" class="row">
-					<div class="span3">
-						<label>Name</label>
-						<input type="text" name="name" placeholder="Your name" />
-					</div>
-					<div class="span3">
-						<label>E-mail</label>
-						<input type="email" name="email" placeholder="@" />
-					</div>
-					<div class="span6">
-						<label>Your message</label>
-						<textarea style="width:450px" name="message" rows="4" placeholder="Leave us your message"></textarea>
-						<p>
-							<a id="contact-form-submit" class="button yellow fr">Send &nbsp;<i class="icon-chevron-right"></i></a>
-						</p>
-					</div>
-					<input type="hidden" name="bot" value="" />
-				</form>
-		</div>
-	</div>
 	</section>
 
 	<!-- Footer

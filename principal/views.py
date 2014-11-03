@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
+from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponseRedirect
 from transporte.models import *
 from forms import *
@@ -18,17 +19,28 @@ def vista_conductores(request):
     return  render_to_response('conductores.html',locals())
 
 def vista_registro(request):
+    enviado = False
+    usuarioRegistrado = False
+    nomUsuario =''
     if request.method == 'POST':
         formulario = FormRegistrarUsuario(request.POST)
         if formulario.is_valid():
-            usuario = Usuario()
-            usuario.identificacion = formulario.cleaned_data['identificacion']
-            usuario.nombres = formulario.cleaned_data['nombre']
-            usuario.apellidos = formulario.cleaned_data['apellido']
-            usuario.fecha_nacimiento = formulario.cleaned_data['fecha_nacimiento']
-            usuario.puntosAcumulados = 0
-            usuario.save()
+            try:
+                checkUsuario = Usuario.objects.get(identificacion = formulario.cleaned_data['identificacion'])
+                nomUsuario = checkUsuario.nombres
+                usuarioRegistrado = True
+            except ObjectDoesNotExist:
+                usuario = Usuario()
+                usuario.identificacion = formulario.cleaned_data['identificacion']
+                usuario.nombres = formulario.cleaned_data['nombre']
+                usuario.apellidos = formulario.cleaned_data['apellido']
+                usuario.fecha_nacimiento = formulario.cleaned_data['fecha_nacimiento']
+                usuario.puntosAcumulados = 0
+                usuario.save()
+                enviado = True
     else:
         formulario = FormRegistrarUsuario()
-    ctx = {'form':formulario}
+    if enviado :
+        formulario = FormRegistrarUsuario()
+    ctx = {'form':formulario,'registrado':usuarioRegistrado,'usuario':nomUsuario}
     return render_to_response('registro.html',ctx,context_instance=RequestContext(request))
