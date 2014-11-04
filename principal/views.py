@@ -19,6 +19,10 @@ def vista_conductores(request):
     cond=Conductor.objects.all()
     return  render_to_response('conductores.html',locals())
 
+def vista_conductor_id(request,id_cond):
+    cond=Conductor.objects.get(identificacion=id_cond)
+    return render_to_response('condutor_detalle.html',locals(),context_instance=RequestContext(request))
+
 def vista_registro(request):
     enviado = False
     usuarioRegistrado = False

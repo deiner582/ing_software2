@@ -120,8 +120,14 @@
 			<p class="member-bio">
                  {{ c.descripcion|safe }}
 			</p>
+
+					<a class="button green" href="/conductores/id/{{ c.identificacion }}">Ver mas</a>
+
 			<div class="member-avatar">
-				{{ c.foto|safe }}
+
+					<img src="../{{ c.foto }}" alt="">
+
+
 			</div>
 
 

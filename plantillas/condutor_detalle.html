@@ -68,8 +68,7 @@
             <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign in</a>
             <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
              <form action="." method="POST">
-               {% csrf_token %}
-               {{ iniciar_sesion.as_p }}
+
                <input type="submit" value="Iniciar"/>
              </form>
 
@@ -84,63 +83,158 @@
 		</nav>
 
 	</header>
+
 	<!-- Content
 	================================================== -->
 	<section id="content" class="container">
 
-
 	<div class="hero-unit">
-		<h1>Venta de Billetes para viajes</h1>
-		<p>
-			Escoja la categoria que mas se acomode a su bolsillo.
-		</p>
-  	</div>
-     </hr>
 
-	<!-- Pricing table -->
-	<div class="row pricing">
-
-        {% if categoria|length_is:"0" %}
-           <div class="alert alert-success">
-
-				Por el momento no hay conductores registramos en nuestro sistema.
-			</div>
-           {% else %}
-		{% for c in categoria %}
-		<!-- Plan -->
-		<div class="plan span4">
-			<h3 class="title">{{ c.nombre }}</h3>
-			<h4 class="price gradient">$ {{ 1.00|floatformat:2 }}</h4>
-			<div class="well">
-				<ul>
-
-					<li><i class="icon-ok"></i> Ida y Vuelta</li>
-					<li><i class="icon-ok"></i> Incluye refrigerio</li>
-
-				</ul>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus.</p>
-				<hr />
-				<p class="ac">
-					<a class="button green" href="#">Seleccionar Categoria</a>
-				</p>
-			</div>
-		</div>
-        {% endfor %}
-    {% endif %}
-		<!-- end Plan -->
-		
-
-
-		<!-- Plan -->
-
-
+        <h1>{{ cond.nombres }}  {{ cond.apellidos }}</h1>
 
 	</div>
-	<!-- end Pricing table, end .row -->
+
+	<hr />
+
+	<!-- #blog -->
+	<div class="row" id="blog">
+
+		<!-- posts -->
+		<div class="span8">
+
+			<!-- Example of image blog item
+			================================================== -->
+			<article class="post image-post">
+
+				<!-- entry media -->
+				<a href="blog-single.html" class="entry-media">
+					<img src="http://placehold.it/600x400/222/fff" alt="" width="600" height="400"/>
+				</a>
+
+				<!-- entry body -->
+				<div class="entry-body">
+					<a href="blog-single.html">
+						<h2 class="entry-title">
+							Descripcion:
+						</h2>
+					</a>
+					<p>{{ cond.descripcion }} </p>
+                     <hr />
+
+                     	<h2 class="entry-title">
+							Autobus:
+						</h2>
+					</a>
+					<p>{{ c.auto }} </p>
+               <hr />
+
+                    	<h2 class="entry-title">
+							Salario:
+						</h2>
+					</a>
+					<p>{{ c.salario }} </p>
+                 <hr />
+                    	<h2 class="entry-title">
+							Horas de trabajo por dia:
+						</h2>
+					</a>
+					<p>{{ c.limite_hora_dia }} </p>
+                 <hr />
+                    	<h2 class="entry-title">
+							Horas de trabajo por semana:
+						</h2>
+					</a>
+					<p>{{ c.limite_hora_semana }} </p>
+                 <hr />
 
 
-	<!-- end Extra words -->
+                    <h2 class="entry-title">
+							Historial :
+						</h2>
+					</a>
+					<table class="stacked">
+				<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Age</th>
+						<th>Total</th>
+						<th>Discount</th>
+						<th>Difference</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Bruce</td>
+						<td>Almighty</td>
+						<td>45</td>
+						<td>$153.19</td>
+						<td>44.7%</td>
+						<td>+77</td>
+					</tr>
+				</tbody>
+			</table>
 
+
+				</div>
+
+
+
+				<!-- clearfix -->
+				<div class="clr"></div>
+
+			</article><!-- end item -->
+
+			<!-- Example of video blog item
+			================================================== -->
+
+
+
+			
+
+
+			<!-- Pagination
+			================================================== -->
+
+		</div><!-- end .span8 -->
+
+		<!-- Sidebar with widgets
+		================================================== -->
+		<div class="sidebar span4">
+
+			<!-- search plugin -->
+
+			<!-- Tags / categories -->
+			<div class="widget">
+				<h4>Categories</h4>
+				<ul class="tags">
+					<li><a href="#">design</a></li>
+					<li><a href="#">user interface</a></li>
+					<li><a href="#">typography</a></li>
+					<li><a href="#">apps</a></li>
+					<li><a href="#">mac os/x</a></li>
+				</ul>
+			</div>
+
+			<!-- List widget with custom list icons -->
+			<div class="widget">
+				<h4>List widget</h4>
+				<ul class="list-style">
+					<li><i class="icon-chevron-right"></i> design</li>
+					<li><i class="icon-chevron-right"></i> user interface</li>
+					<li><i class="icon-chevron-right"></i> typography</li>
+					<li><i class="icon-chevron-right"></i> apps</li>
+					<li><i class="icon-chevron-right"></i> mac os/x</li>
+				</ul>
+			</div>
+
+
+
+		</div><!-- end sidebar -->
+
+	</div><!-- end #blog -->
+
+	<script type="text/javascript" src="js/jflickrfeed.min.js"></script>
 	</section>
 
 	<!-- Footer
@@ -150,17 +244,17 @@
 		<div class="container">
 			<div class="row">
 				<div class="span4">
-					<a class="brand" href="index.html">
-						Plain
+					<a class="brand" href="/">
+						Trans India
 					</a>
 					<p>
-						Creative agency working <br />with web and interactive media. <br />
-						Lorem ipsum dolor sit amet.
-						
+						Sigale que si hay puesto.
+
 					</p>
 				</div>
 				<div class="span4 social-networks">
-					<h3>Find us elsewhere</h3>
+					<h3>Encuentranos en:</h3>
+
 					<p>
 						<a class="social-network twitter"></a>
 						<a class="social-network facebook"></a>
@@ -169,17 +263,14 @@
 						<a class="social-network pinterest"></a>
 					</p>
 				</div>
-				<div class="span4 newsletter">
-					<h3>Newsletter</h3>
-					<p>Subscribe to our monthly newsletter and be the first to know about our news and special deals!</p>
-					<img class="ajax-loader" src="img/ajax-loader.gif" alt="" />
-					<form method="post" id="newsletter-form">
-						<input type="text" placeholder="Enter your E-mail" name="subscribe" />
-						<input type="hidden" name="bot" /><!-- SPAM protection -->
-						<button type="submit" class="icon-ok" id="newsletter-subscribe" ></button>
-					</form>
-				</div> 
-			</div> <!-- end .row -->		
+
+					<div class="span4 social-networks">
+					<h3>Somos la mejor empresa de transporte de la india,con mas de 100 años de experiencia.</h3>
+
+
+				</div>
+
+			</div> <!-- end .row -->
 		</div> <!-- end .container -->
 	</footer><!-- end #footer -->
 
@@ -187,21 +278,21 @@
 		<div class="container">
 			<div class="row">
 				<div class="span4">
-					&copy; 2010—2012 by <a>Plain</a>
+					&copy; 2014 by <a>Trans India</a>
 				</div>
 				<div class="span4">
-					<a href="#" title="Send us email">hello@plain.com</a>, 
-					+123 320 000 123 456
+					<p>                             <p>
+
 				</div>
 				<div class="span4">
-					<a href="http://themeforest.net/item/plain/2616790" rel="external" title="">PLAIN</a> BY <a title="Michal Šimonfy" rel="external" href="http://virae.org">VIRAE</a>
-					
+					<a href="http://themeforest.net/item/plain/2616790" rel="external" title="">Trans India</a> BY <a title="Michal Šimonfy" rel="external" href="http://virae.org">VIRAE</a>
+
 				</div>
-			</div> <!-- end .row -->		
+			</div> <!-- end .row -->
 		</div> <!-- end .container -->
 	</footer><!-- end #footer-extra -->
 
-	<!-- Javascript - Placed at the end of the document so the pages load faster 
+	<!-- Javascript - Placed at the end of the document so the pages load faster
 	================================================== -->
 
 	<script type="text/javascript" src="../estaticos/js/bootstrap.min.js"></script>
@@ -209,6 +300,6 @@
 	<script type="text/javascript" src="../estaticos/js/jquery.touchSwipe.js"></script>
 	<script type="text/javascript" src="../estaticos/js/jquery.hotkeys.min.js" charset='utf-8'></script>
 	<script type="text/javascript" src="../estaticos/js/functions.js"></script>
-	
+
 </body>
-</html>		
+</html>

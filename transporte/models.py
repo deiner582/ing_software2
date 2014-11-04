@@ -13,7 +13,7 @@ class Persona(models.Model):
 class Autobus(models.Model):
     placa=models.TextField(max_length=6,primary_key=True)
     marca=models.TextField(max_length=50)
-    imagenBus=models.ImageField()
+    foto=models.ImageField(upload_to="estaticos/img/autobuses")
     peso=models.FloatField()
     velocidad_max=models.FloatField(max_length=3)
     precio=models.FloatField()
@@ -32,7 +32,7 @@ class Control_mecanico(models.Model):
 
 
 class Conductor(Persona):
-    foto=RichTextField()
+    foto=models.ImageField(upload_to="estaticos/img/conductor")
     descripcion=RichTextField()
     autobus_placa=models.ForeignKey(Autobus)
     limite_hora_dia=models.IntegerField(max_length=2)
