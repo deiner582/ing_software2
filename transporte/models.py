@@ -14,7 +14,8 @@ class Autobus(models.Model):
     placa=models.TextField(max_length=6,primary_key=True)
     marca=models.TextField(max_length=50)
     foto=models.ImageField(upload_to="estaticos/img/autobuses")
-    peso=models.FloatField()
+    peso=models.IntegerField()
+    consumo=models.TextField(max_length=50)
     velocidad_max=models.FloatField(max_length=3)
     precio=models.FloatField()
 
@@ -37,7 +38,7 @@ class Conductor(Persona):
     autobus_placa=models.ForeignKey(Autobus)
     limite_hora_dia=models.IntegerField(max_length=2)
     limite_hora_semana=models.IntegerField(max_length=3)
-    sueldo=models.FloatField()
+    sueldo=models.IntegerField()
 
     def __unicode__(self):
         return (self.nombres + " "+ self.apellidos)
@@ -54,6 +55,7 @@ class Paradas(models.Model):
 class Categoria(models.Model):
     codigo=models.TextField(max_length=20,primary_key=True)
     nombre=models.TextField(max_length=30)
+    descripcion=models.TextField(max_length=100)
     costo=models.FloatField()
 
     def __unicode__(self):
@@ -61,7 +63,6 @@ class Categoria(models.Model):
 
 class Trayecto(models.Model):
     codigo=models.TextField(max_length=20,primary_key=True)
-    categoria_trayecto=models.ForeignKey(Categoria)
     paradas_trayecto=models.ManyToManyField(Paradas)
 
     def __unicode__(self):
@@ -77,6 +78,7 @@ class Usuario(Persona):
 
 class Billetes(models.Model):
     codigo=models.TextField(max_length=20,primary_key=True)
+    categoria=models.ForeignKey(Categoria)
     usuario=models.ForeignKey(Usuario)
     autobus=models.ForeignKey(Autobus)
     parada_origen=models.ForeignKey(Paradas,related_name="parada origen")

@@ -23,6 +23,14 @@ def vista_conductor_id(request,id_cond):
     cond=Conductor.objects.get(identificacion=id_cond)
     return render_to_response('condutor_detalle.html',locals(),context_instance=RequestContext(request))
 
+def vista_bus_placa(request,p):
+    bus=Autobus.objects.get(placa=p)
+    return render_to_response('bus_detalle.html',locals(),context_instance=RequestContext(request))
+
+def comprar_viaje(request,cat):
+    billete=Billetes.objects.filter(categoria__codigo__exact='1c')
+    return render_to_response('comprar_viaje.html',locals(),context_instance=RequestContext(request))
+
 def vista_registro(request):
     enviado = False
     usuarioRegistrado = False
