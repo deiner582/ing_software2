@@ -21,10 +21,14 @@ def vista_conductores(request):
 
 def vista_conductor_id(request,id_cond):
     cond=Conductor.objects.get(identificacion=id_cond)
+    registro_entrada_salida=Horas_Entrada_Salida.objects.filter(conductor=id_cond)
+    historial=Historia_Conductor.objects.filter(conductor=id_cond)
     return render_to_response('condutor_detalle.html',locals(),context_instance=RequestContext(request))
 
 def vista_bus_placa(request,p):
     bus=Autobus.objects.get(placa=p)
+    fallosMecanicos = Control_mecanico.objects.filter(autobus_placa=p)
+    revisiones = Revisiones_Bus.objects.filter(autobus_placa=p)
     return render_to_response('bus_detalle.html',locals(),context_instance=RequestContext(request))
 
 def comprar_viaje(request,cat):

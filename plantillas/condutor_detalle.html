@@ -114,98 +114,83 @@
                 </hr>
 
                 <div class="span12">
+                    <h2 class="entry-title">Datos del Conductor :</h2></a>
+                    <table class="stacked">
+                        <thead>
+                            <tr>
+                                <th>Descripción</th>
+                                <th>Autobus</th>
+                                <th>Salario</th>
+                                <th>Horas de Trabajo por Día</th>
+                                <th>Horas de trabajo por Semana:</th>
+                            </tr>
 
-
-
-				<!-- entry body -->
-
-
-                      	<h2 class="entry-title">
-							Descripcion:
-						</h2>
-					</a>
-					<p>{{ cond.descripcion|safe }} </p>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ cond.descripcion|safe }} </td>
+                                <td>{{ cond.autobus_placa}}</td>
+                                <td>$ {{ cond.sueldo }} </td>
+                                <td>{{ cond.limite_hora_dia }}</td>
+                                <td>{{ cond.limite_hora_semana }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                <hr />
-
-
-                     	<h2 class="entry-title">
-							Autobus:
-						</h2>
-					</a>
-					<p>{{ cond.autobus_placa}} </p>
-               <hr />
-
-                    	<h2 class="entry-title">
-							Salario:
-						</h2>
-					</a>
-					<p>$ {{ cond.sueldo }} </p>
-                 <hr />
-                    	<h2 class="entry-title">
-							Horas de trabajo por dia:
-						</h2>
-					</a>
-					<p>{{ cond.limite_hora_dia }} </p>
-                 <hr />
-                    	<h2 class="entry-title">
-							Horas de trabajo por semana:
-						</h2>
-					</a>
-					<p>{{ cond.limite_hora_semana }} </p>
-                 <hr />
-
-
-                    <h2 class="entry-title">
-							Historial de Entrada :
-						</h2>
-					</a>
-					<table class="stacked">
-				<thead>
-					<tr>
-						<th>Fecha</th>
-						<th>Hora de entrada</th>
-						<th>Hora de salida</th>
-						<th>Horas laboradas</th>
-						<th>Horas Extras</th>
-
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>17/08/14</td>
-						<td>08:00 am</td>
-						<td>02:00 pm</td>
-						<td>6</td>
-						<td>0</td>
-
-					</tr>
-				</tbody>
-			</table>
-
+                    <h2 class="entry-title">Registro de Horas de Entrada y Salida :</h2></a>
+                    {% if registro_entrada_salida|length_is:'0'%}
+                        <p>El Conductor no registra horas de entrada y salida</p>
+                    {% else %}
+                        <table class="stacked">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Hora de entrada</th>
+                                    <th>Hora de salida</th>
+                                    <th>Horas laboradas</th>
+                                    <th>Horas Extras</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                             {% for rea in registro_entrada_salida %}
+                                <tr>
+                                    <td>{{ rea.codigo_horas}}</td>
+                                    <td>{{ rea.hora_entrada }}</td>
+                                    <td>{{ rea.hora_salida }}</td>
+                                    <td>{{ rea.horas_trabajadas }}</td>
+                                    <td>{{ rea.horas_extras }}</td>
+                                </tr>
+                             {% endfor %}
+                            </tbody>
+                        </table>
+                    {% endif %}
                     <hr />
+                    <h2 class="entry-title">Historial de Inasistencias :</h2></a>
+                    {% if historial|length_is:'0' %}
+                        <p>El Conductor No Registra ausencias en el Trabajo</p>
+                    {% else %}
+                        <table class="stacked">
+				        <thead>
+                            <tr>
+                                <th>Codigo</th>
+                                <th>Fecha</th>
+                                <th>Justificacón</th>
+                            </tr>
+				        </thead>
+				        <tbody>
+                            {% for h in historial %}
+                                <tr>
+						        <td>{{ h.codigo_ausencia}}</td>
+						        <td>{{ h.fecha_ausencia }}</td>
+                                <td>{{ h.justificacion|safe }}</td>
+					        </tr>
+                            {% endfor %}
+				        </tbody>
+			        </table>
+                    {% endif %}
 
-                        <h2 class="entry-title">
-							Historial de Inasistencias :
-						</h2>
-					</a>
-					<table class="stacked">
-				<thead>
-					<tr>
-						<th>Fecha</th>
-						<th>Causa</th>
 
 
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>17/08/15</td>
-						<td>diarrea</td>
-
-
-					</tr>
-				</tbody>
-			</table>
 
 
 				</div>
