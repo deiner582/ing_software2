@@ -97,80 +97,112 @@
 	<hr />
 
 	<!-- #blog -->
-	<div class="row" id="blog">
 
-		<!-- posts -->
-		<div class="span8">
+
 
 			<!-- Example of image blog item
 			================================================== -->
 			<article class="post image-post">
 
 				<!-- entry media -->
-				<a href="blog-single.html" class="entry-media">
-					<img src="http://placehold.it/600x400/222/fff" alt="" width="600" height="400"/>
+                <p class="ac">
+					<a href="../{{ cond.foto }}" class="">
+					<img src="../{{ cond.foto }}" alt="" width="400" height="400"/>
 				</a>
+				</p>
+
+                </hr>
+
+                <div class="span12">
+
+
 
 				<!-- entry body -->
-				<div class="entry-body">
-					<a href="blog-single.html">
-						<h2 class="entry-title">
+
+
+                      	<h2 class="entry-title">
 							Descripcion:
 						</h2>
 					</a>
-					<p>{{ cond.descripcion }} </p>
-                     <hr />
+					<p>{{ cond.descripcion|safe }} </p>
+               <hr />
+
 
                      	<h2 class="entry-title">
 							Autobus:
 						</h2>
 					</a>
-					<p>{{ c.auto }} </p>
+					<p>{{ cond.autobus_placa}} </p>
                <hr />
 
                     	<h2 class="entry-title">
 							Salario:
 						</h2>
 					</a>
-					<p>{{ c.salario }} </p>
+					<p>$ {{ cond.sueldo }} </p>
                  <hr />
                     	<h2 class="entry-title">
 							Horas de trabajo por dia:
 						</h2>
 					</a>
-					<p>{{ c.limite_hora_dia }} </p>
+					<p>{{ cond.limite_hora_dia }} </p>
                  <hr />
                     	<h2 class="entry-title">
 							Horas de trabajo por semana:
 						</h2>
 					</a>
-					<p>{{ c.limite_hora_semana }} </p>
+					<p>{{ cond.limite_hora_semana }} </p>
                  <hr />
 
 
                     <h2 class="entry-title">
-							Historial :
+							Historial de Entrada :
 						</h2>
 					</a>
 					<table class="stacked">
 				<thead>
 					<tr>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Age</th>
-						<th>Total</th>
-						<th>Discount</th>
-						<th>Difference</th>
+						<th>Fecha</th>
+						<th>Hora de entrada</th>
+						<th>Hora de salida</th>
+						<th>Horas laboradas</th>
+						<th>Horas Extras</th>
+
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td>Bruce</td>
-						<td>Almighty</td>
-						<td>45</td>
-						<td>$153.19</td>
-						<td>44.7%</td>
-						<td>+77</td>
+						<td>17/08/14</td>
+						<td>08:00 am</td>
+						<td>02:00 pm</td>
+						<td>6</td>
+						<td>0</td>
+
+					</tr>
+				</tbody>
+			</table>
+
+                    <hr />
+
+                        <h2 class="entry-title">
+							Historial de Inasistencias :
+						</h2>
+					</a>
+					<table class="stacked">
+				<thead>
+					<tr>
+						<th>Fecha</th>
+						<th>Causa</th>
+
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>17/08/15</td>
+						<td>diarrea</td>
+
+
 					</tr>
 				</tbody>
 			</table>
@@ -200,37 +232,7 @@
 
 		<!-- Sidebar with widgets
 		================================================== -->
-		<div class="sidebar span4">
 
-			<!-- search plugin -->
-
-			<!-- Tags / categories -->
-			<div class="widget">
-				<h4>Categories</h4>
-				<ul class="tags">
-					<li><a href="#">design</a></li>
-					<li><a href="#">user interface</a></li>
-					<li><a href="#">typography</a></li>
-					<li><a href="#">apps</a></li>
-					<li><a href="#">mac os/x</a></li>
-				</ul>
-			</div>
-
-			<!-- List widget with custom list icons -->
-			<div class="widget">
-				<h4>List widget</h4>
-				<ul class="list-style">
-					<li><i class="icon-chevron-right"></i> design</li>
-					<li><i class="icon-chevron-right"></i> user interface</li>
-					<li><i class="icon-chevron-right"></i> typography</li>
-					<li><i class="icon-chevron-right"></i> apps</li>
-					<li><i class="icon-chevron-right"></i> mac os/x</li>
-				</ul>
-			</div>
-
-
-
-		</div><!-- end sidebar -->
 
 	</div><!-- end #blog -->
 

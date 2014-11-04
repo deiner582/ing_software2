@@ -51,6 +51,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'transporte',
      'ckeditor',
+     'debug_toolbar',
 
 )
 
@@ -62,6 +63,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 ROOT_URLCONF = 'principal.urls'
