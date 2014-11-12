@@ -1,8 +1,8 @@
-from django.shortcuts import render
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponseRedirect
+import datetime
 from transporte.models import *
 from forms import *
 # Create your views here.
@@ -19,16 +19,21 @@ def vista_conductores(request):
     cond=Conductor.objects.all()
     return  render_to_response('conductores.html',locals())
 
-def vista_conductor_id(request,id_cond):
-    cond=Conductor.objects.get(identificacion=id_cond)
-    return render_to_response('condutor_detalle.html',locals(),context_instance=RequestContext(request))
+def vista_conductor_id(request, id_cond):
+    cond = Conductor.objects.get(identificacion=id_cond)
+    registro_entrada_salida = HoraEntradaSalida.objects.filter(conductor=id_cond)
+    historial = HistorialConductor.objects.filter(conductor=id_cond)
+    return render_to_response('condutor_detalle.html', locals(), context_instance=RequestContext(request))
 
-def vista_bus_placa(request,p):
-    bus=Autobus.objects.get(placa=p)
-    return render_to_response('bus_detalle.html',locals(),context_instance=RequestContext(request))
+def vista_bus_placa(request, p):
+    bus = Autobus.objects.get(placa=p)
+    fallosMecanicos = ControlMecanico.objects.filter(autobus_placa=p)
+    revisiones = RevisionBus.objects.filter(autobus_placa=p)
+    return render_to_response('bus_detalle.html', locals(), context_instance=RequestContext(request))
 
-def comprar_viaje(request,cat):
-    billete=Billetes.objects.filter(categoria__codigo__exact='1c')
+
+def comprar_viaje(request, cat):
+    viaje=Viaje.objects.filter(categoria=cat)
     return render_to_response('comprar_viaje.html',locals(),context_instance=RequestContext(request))
 
 def vista_registro(request):
@@ -58,7 +63,7 @@ def vista_registro(request):
     if enviado :
         formulario = FormRegistrarUsuario()
     ctx = {'form':formulario,'registrado':usuarioRegistrado,'usuario':nomUsuario}
-    return render_to_response('registro.html',ctx,context_instance=RequestContext(request))
+    return render_to_response('registro.html', ctx, context_instance=RequestContext(request))
 
 def vista_billetes(request):
     categoria=Categoria.objects.all()

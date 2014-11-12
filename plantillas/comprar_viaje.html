@@ -88,12 +88,6 @@
 	================================================== -->
 	<section id="content" class="container">
 
-	<div class="hero-unit">
-
-        <h1>{{ cond.nombres }}  {{ cond.apellidos }}</h1>
-
-	</div>
-
 	<hr />
 
 	<!-- #blog -->
@@ -116,41 +110,51 @@
 
 
                     <h2 class="entry-title">
-							Billetes displonibles :
+							Viajes displonibles :
 						</h2>
 					</a>
+
+                     {% if viaje|length_is:'0'%}
+                       <div class="alert alert-success">
+				     No hay viajes disponibles para esta categoria.
+			         </div>
+                 {% else %}
 					<table class="stacked">
 				<thead>
 					<tr>
 						<th>Codigo</th>
+                        <th>Origen - Destino</th>
+                        <th>Tipo </th>
+					    <th>Bus</th>
 
-						<th>Parada origen </th>
-						<th>Parada destino</th>
+                        <th>Precio base</th>
+                        <th>Precio extra</th>
+                        <th>Precio total</th>
+                        <th>Comprar</th>
 
 
 
 					</tr>
 				</thead>
 				<tbody>
-               {% if billete|length_is:"1" %}
-					<tr>
-						<td>{{ billete.codigo }}</td>
-						<td>{{ billete.parada_origen }}</td>
-						<td>{{ billete.parada_destino }}</td>
 
 
-					</tr>
-                {% else%}
-                     {% for b in billete %}
+
+                     {% for v in viaje %}
                    	<tr>
-						<td>{{ b.codigo }}</td>
-						<td>{{ b.parada_origen }}</td>
-						<td>{{ b.parada_destino }}</td>
+						<td>{{ v.codigo }}</td>
+                        <td>{{ v.origen }} - {{ v.destino }}</td>
+						<td>{{ v.tipo }}</td>
+                        <td>{{ v.bus_asignado }}</td>
+                        <td>{{ v.precio_base }}</td>
+                        <td>{{ v.precio_total }}</td>
+                        <td>{{ v.precio_total|add:v.precio_base }}</td>
+                        <td><input type="checkbox"></td>
 
 
 					</tr>
                    {% endfor %}
-                {% endif %}
+                 {% endif %}
 
 				</tbody>
 			</table>
