@@ -5,6 +5,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponseRedirect
 from transporte.models import *
 from forms import *
+from datetime import date,datetime,time,timedelta
 # Create your views here.
 
 def vista_index(request):
@@ -23,6 +24,10 @@ def vista_conductor_id(request,id_cond):
     cond=Conductor.objects.get(identificacion=id_cond)
     registro_entrada_salida=Horas_Entrada_Salida.objects.filter(conductor=id_cond)
     historial=Historia_Conductor.objects.filter(conductor=id_cond)
+    def horasTrabajadas():
+        for rea in registro_entrada_salida:
+            return registro_entrada_salida.hora_salida - registro_entrada_salida.hora_entrada
+    ht = horasTrabajadas
     return render_to_response('condutor_detalle.html',locals(),context_instance=RequestContext(request))
 
 def vista_bus_placa(request,p):

@@ -14,4 +14,3 @@ class FormRegistrarUsuario(forms.Form):
 class Formulario_iniciar_sesion(forms.Form):
     Username=forms.CharField(widget=forms.TextInput())
     Password = forms.CharField(widget=forms.PasswordInput())
-
