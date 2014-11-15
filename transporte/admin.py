@@ -3,11 +3,11 @@ from transporte.models import *
 # Register your models here.
 
 admin.site.register(Autobus)
-admin.site.register(ControlMecanico)
-admin.site.register(RevisionBus)
 admin.site.register(Conductor)
 admin.site.register(HistorialConductor)
 admin.site.register(HoraEntradaSalida)
+admin.site.register(ControlMecanico)
+admin.site.register(RevisionBus)
 admin.site.register(Ciudad)
 admin.site.register(Parada)
 admin.site.register(Categoria)

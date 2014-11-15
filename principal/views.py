@@ -22,18 +22,22 @@ def vista_conductores(request):
 
 def vista_conductor_id(request,id_cond):
     cond=Conductor.objects.get(identificacion=id_cond)
-    registro_entrada_salida=Horas_Entrada_Salida.objects.filter(conductor=id_cond)
-    historial=Historia_Conductor.objects.filter(conductor=id_cond)
-    def horasTrabajadas():
+    registro_entrada_salida=HoraEntradaSalida.objects.filter(conductor=id_cond)
+    historial=HistorialConductor.objects.filter(conductor=id_cond)
+
+    def horas_trabajadas():
         for rea in registro_entrada_salida:
-            return registro_entrada_salida.hora_salida - registro_entrada_salida.hora_entrada
-    ht = horasTrabajadas
+            return rea.hora_salida.hour - rea.hora_entrada.hour
+
+    ht = horas_trabajadas()
+    he = ht - cond.limite_hora_dia
+
     return render_to_response('condutor_detalle.html',locals(),context_instance=RequestContext(request))
 
 def vista_bus_placa(request,p):
     bus=Autobus.objects.get(placa=p)
-    fallosMecanicos = Control_mecanico.objects.filter(autobus_placa=p)
-    revisiones = Revisiones_Bus.objects.filter(autobus_placa=p)
+    fallosMecanicos = ControlMecanico.objects.filter(autobus_placa=p)
+    revisiones = RevisionBus.objects.filter(autobus_placa=p)
     return render_to_response('bus_detalle.html',locals(),context_instance=RequestContext(request))
 
 def comprar_viaje(request,cat):

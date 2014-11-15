@@ -49,7 +49,7 @@ class Conductor(Persona):
     autobus_placa=models.ForeignKey(Autobus)
     foto = models.ImageField(upload_to="estaticos/img/conductor")
     descripcion = RichTextField()
-    limite_hora_dia = models.TimeField()
+    limite_hora_dia = models.IntegerField(max_length=2)
     limite_hora_semana = models.CharField(max_length=8, ) # Colocar Formato
     sueldo = models.IntegerField(max_length=7)
 
@@ -68,8 +68,10 @@ class HistorialConductor(models.Model):
 class HoraEntradaSalida(models.Model):
     codigo = models.CharField(max_length=5, primary_key=True)
     conductor = models.ForeignKey(Conductor)
-    hora_entrada = models.DateTimeField(null=True)
-    hora_salida = models.DateTimeField(null=True)
+    fecha_entrada = models.DateField(null=True)
+    hora_entrada = models.TimeField(null=True)
+    fecha_salida = models.DateField(null=True)
+    hora_salida = models.TimeField(null=True)
 
     def __unicode__(self):
         return self.codigo
