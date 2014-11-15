@@ -25,7 +25,6 @@
 <body>
 
 	<!-- Header
-
 	================================================== -->
 	<header id="header">
 
@@ -87,158 +86,99 @@
 	<!-- Content
 	================================================== -->
 	<section id="content" class="container">
-
-	<div class="hero-unit">
-
+    	<div class="hero-unit">
         <h1>{{ bus.placa }}</h1>
-
-	</div>
-
-	<hr />
-
-	<!-- #blog -->
-
-
-
-			<!-- Example of image blog item
-			================================================== -->
-			<article class="post image-post">
-
-				<!-- entry media -->
-                <p class="ac">
-					<a href="../{{ bus.foto }}" class="">
-					<img src="../{{ bus.foto }}" alt="" width="600" height="400"/>
-				</a>
-				</p>
-
-                </hr>
-
-                <div class="span12">
-
-
-
-				<!-- entry body -->
-
-
-                      	<h2 class="entry-title">
-							Marca:
-						</h2>
-					</a>
-					<p>{{ bus.marca }} </p>
+	    </div>
+	    <hr />
+		<article class="post image-post">
+            <p class="ac"><a href="../{{ bus.foto }}" class=""><img src="../{{ bus.foto }}" alt="" width="600" height="400"/></a></p>
+        </hr>
+        <div class="span12">
+            <h2 class="entry-title">Detalles del Vehiculo:</h2>
+                <table class="stacked">
+                    <thead>
+                        <tr>
+                            <th>Placa</th>
+                            <th>Marca</th>
+                            <th>Velocidad</th>
+                            <th>Peso</th>
+                            <th>Consumo</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{bus.placa}}</td>
+                            <td>{{bus.marca}}</td>
+                            <td>{{bus.velocidad_max}} km/h</td>
+                            <td>{{bus.peso}} kg</td>
+                            <td>{{bus.consumo}}</td>
+                            <td>{{bus.precio}}</td>
+                        </tr>
+                    </tbody>
+                </table>
                <hr />
-
-
-                     	<h2 class="entry-title">
-							Velocidad:
-						</h2>
-					</a>
-					<p>{{ bus.velocidad_max}} km/h </p>
+			    </a>
                <hr />
+               <h2 class="entry-title">Historial de problemas Mecánicos:</h2>
+                    {% if fallosMecanicos|length_is:"0" %}
+                        <p>El Vehiculo no Registra Fallos Mecánicos</p>
+                    {% else %}
+                        <table class="stacked">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Descripcion problema</th>
+                                <th>Costo</th>
 
-                    	<h2 class="entry-title">
-							Peso:
-						</h2>
-					</a>
-					<p> {{ bus.peso }} kg</p>
-                 <hr />
-                    	<h2 class="entry-title">
-							Consumo:
-						</h2>
-					</a>
-					<p>{{ bus.consumo }} </p>
-                 <hr />
-                    	<h2 class="entry-title">
-							Precio:
-						</h2>
-					</a>
-					<p>{{ bus.precio }} </p>
-                 <hr />
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for fallo in fallosMecanicos %}
+                                <tr>
+                                    <td>{{ fallo.fecha_reparacion }}</td>
+                                    <td>{{ fallo.descripcion_fallo| safe }}</td>
+                                    <td>{{ fallo.costo_reparacion }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+			        </table>
+                    {% endif %}
+            <hr />
+            <h2 class="entry-title">Historial de revision :</h2></a>
+            {% if revisiones|length_is:'0' %}
+                <p>El Vehículo no Registra revisiones Recientes</p>
+            {% else %}
+                <table class="stacked">
+                    <thead>
+                        <tr>
+                            <th>Codígo de Revision</th>
+                            <th>Descripcón de la Revision</th>
+                            <th>Fecha de Revisión</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for r in revisiones %}
+                            <tr>
+                            <td>{{ r.codigo_revision }}</td>
+                            <td>{{ r.descripcion_revision|safe }}</td>
+                            <td>{{ r.fecha_revision }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+			    </table>
+            {% endif %}
 
-
-                    <h2 class="entry-title">
-							Historial de problemas mecanicos:
-						</h2>
-					</a>
-					<table class="stacked">
-				<thead>
-					<tr>
-						<th>Fecha</th>
-						<th>Descripcion problema</th>
-						<th>Costo</th>
-
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>17/08/14</td>
-						<td>llanta dañana</td>
-						<td>$50</td>
-
-
-					</tr>
-				</tbody>
-			</table>
-
-                    <hr />
-
-                        <h2 class="entry-title">
-							Historial de revision :
-						</h2>
-					</a>
-					<table class="stacked">
-				<thead>
-					<tr>
-						<th>Fecha</th>
-						<th>Causa</th>
-
-
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>17/08/15</td>
-						<td>diarrea</td>
-
-
-					</tr>
-				</tbody>
-			</table>
-
-
-				</div>
-
-
-
-				<!-- clearfix -->
-				<div class="clr"></div>
-
-			</article><!-- end item -->
-
-			<!-- Example of video blog item
-			================================================== -->
-
-
-
-			
-
-
-			<!-- Pagination
-			================================================== -->
+	    </div>
+        <div class="clr"></div>
+    </article>
 
 		</div><!-- end .span8 -->
-
-		<!-- Sidebar with widgets
-		================================================== -->
-
-
-	</div><!-- end #blog -->
-
+	    </div><!-- end #blog -->
 	<script type="text/javascript" src="js/jflickrfeed.min.js"></script>
 	</section>
-
 	<!-- Footer
 	================================================== -->
-
 	<footer id="footer">
 		<div class="container">
 			<div class="row">
