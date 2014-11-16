@@ -50,7 +50,7 @@ class Conductor(Persona):
     foto = models.ImageField(upload_to="estaticos/img/conductor")
     descripcion = RichTextField()
     limite_hora_dia = models.IntegerField(max_length=2)
-    limite_hora_semana = models.CharField(max_length=8, ) # Colocar Formato
+    limite_hora_semana = models.IntegerField(max_length=8)
     sueldo = models.IntegerField(max_length=7)
 
     def __unicode__(self):
