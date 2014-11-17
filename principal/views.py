@@ -1,3 +1,5 @@
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.core.exceptions import ObjectDoesNotExist
@@ -5,12 +7,16 @@ from django.http import HttpResponseRedirect
 import datetime
 from transporte.models import *
 from forms import *
-from datetime import date,datetime,time,timedelta
+
 # Create your views here.
 
 def vista_index(request):
-    iniciar_sesion=Formulario_iniciar_sesion()
-    return render_to_response('index.html',locals(),context_instance=RequestContext(request))
+    if not request.user.is_anonymous():
+        usuario = request.user
+        iniciado = True
+    else:
+        iniciado = False
+    return render_to_response('index.html', locals(), context_instance=RequestContext(request))
 
 def vista_buses(request):
     buses=Autobus.objects.all()
@@ -20,19 +26,10 @@ def vista_conductores(request):
     cond=Conductor.objects.all()
     return  render_to_response('conductores.html',locals())
 
-
 def vista_conductor_id(request,id_cond):
     cond=Conductor.objects.get(identificacion=id_cond)
     registro_entrada_salida=HoraEntradaSalida.objects.filter(conductor=id_cond)
     historial=HistorialConductor.objects.filter(conductor=id_cond)
-
-    def horas_trabajadas():
-        for rea in registro_entrada_salida:
-            return rea.hora_salida.hour - rea.hora_entrada.hour
-
-    ht = horas_trabajadas()
-    he = ht - cond.limite_hora_dia
-
     return render_to_response('condutor_detalle.html',locals(),context_instance=RequestContext(request))
 
 def vista_bus_placa(request,p):
@@ -46,33 +43,38 @@ def comprar_viaje(request, cat):
     return render_to_response('comprar_viaje.html',locals(),context_instance=RequestContext(request))
 
 def vista_registro(request):
-    enviado = False
-    usuarioRegistrado = False
-    nomUsuario =''
     if request.method == 'POST':
-        formulario = FormRegistrarUsuario(request.POST)
+        formulario = UserCreationForm(request.POST)
         if formulario.is_valid():
-            try:
-                checkUsuario = Usuario.objects.get(identificacion = formulario.cleaned_data['identificacion'])
-                nomUsuario = checkUsuario.nombres
-                usuarioRegistrado = True
-            except ObjectDoesNotExist:
-                usuario = Usuario()
-                usuario.identificacion = formulario.cleaned_data['identificacion']
-                usuario.nombres = formulario.cleaned_data['nombre']
-                usuario.apellidos = formulario.cleaned_data['apellido']
-                usuario.fecha_nacimiento = formulario.cleaned_data['fecha_nacimiento']
-                usuario.username = formulario.cleaned_data['Username']
-                usuario.password = formulario.cleaned_data['Password']
-                usuario.puntosAcumulados = 0
-                usuario.save()
-                enviado = True
+            formulario.save()
+            return HttpResponseRedirect('/')
     else:
-        formulario = FormRegistrarUsuario()
-    if enviado :
-        formulario = FormRegistrarUsuario()
-    ctx = {'form':formulario,'registrado':usuarioRegistrado,'usuario':nomUsuario}
-    return render_to_response('registro.html', ctx, context_instance=RequestContext(request))
+        formulario = UserCreationForm()
+        return render_to_response('registro.html',locals(),context_instance=RequestContext(request))
+
+def vista_login(request):
+    if not request.user.is_anonymous():
+        usuario = request.user
+        iniciado = True
+        return render_to_response('index.html', locals(), context_instance=RequestContext(request))
+    if request.method == 'POST':
+        formulario = AuthenticationForm(request.POST)
+        if formulario.is_valid():
+            username = request.POST['username']
+            clave = request.POST['password']
+            acceso  = authenticate(username = username, password = password)
+            if acceso is not None:
+                if acceso.is_active:
+                    login(request, acceso)
+                    return HttpResponseRedirect('/')
+                else:
+                    return HttpResponseRedirect('/')
+            else:
+                return HttpResponseRedirect('/')
+    else:
+        formulario = AuthenticationForm()
+    return render_to_response('login.html', locals(), context_instance=RequestContext(request))
+
 
 def vista_billetes(request):
     categoria=Categoria.objects.all()

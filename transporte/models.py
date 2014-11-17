@@ -1,7 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from django.core.validators import *
-import datetime
+from datetime import date,datetime,time,timedelta
 
 # Create your models here.
 class Persona(models.Model):
@@ -72,6 +72,14 @@ class HoraEntradaSalida(models.Model):
     hora_entrada = models.TimeField(null=True)
     fecha_salida = models.DateField(null=True)
     hora_salida = models.TimeField(null=True)
+    def _horas_trabajadas(self):
+            return abs(self.hora_salida.hour - self.hora_entrada.hour)
+
+    horas_trabajadas = property(_horas_trabajadas)
+
+    def _horas_extras(self):
+        return abs(self.horas_trabajadas - self.conductor.limite_hora_dia)
+    horas_extras = property(_horas_extras)
 
     def __unicode__(self):
         return self.codigo

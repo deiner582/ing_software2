@@ -1,3 +1,0 @@
-
-
-a=Autobus.objects.filter(conductor__autobus_placa__exact='1p')

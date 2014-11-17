@@ -153,11 +153,11 @@
                             <tbody>
                              {% for rea in registro_entrada_salida %}
                                 <tr>
-                                    <td>{{ rea.codigo}}</td>
-                                    <td>{{ rea.hora_entrada }}</td>
-                                    <td>{{ rea.hora_salida }}</td>
-                                    <td>{{ ht }}</td>
-                                    <td>{{ he }}</td>
+                                    <td>{{ rea.codigo }}</td>
+                                    <td>{{rea.fecha_entrada}} {{"-"}} {{ rea.hora_entrada }}</td>
+                                    <td>{{rea.fecha_salida}} {{"-"}} {{ rea.hora_salida }}</td>
+                                    <td>{{ rea.horas_trabajadas  }}</td>
+                                    <td>{{ rea.horas_extras }}</td>
                                 </tr>
                              {% endfor %}
                             </tbody>

@@ -63,17 +63,11 @@
 
 							</ul>
 						</li>
-						<li><a href="/registro" title="">Sign up</a></li>
-                             <li class="dropdown">
-            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign in</a>
-            <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-             <form action="." method="POST">
-               {% csrf_token %}
-               {{ iniciar_sesion.as_p }}
-               <input type="submit" value="Iniciar"/>
-             </form>
-
-
+						<li><a href="/registro" title="">Registrarse</a></li>
+						<li><a href="/login" >Inicia Sesión</a>
+						{% if iniciado %}
+						<li><a href="#">Usuario: {{usuario}}</a> </li>
+						{% endif %}
 
 
             </div>

@@ -67,8 +67,7 @@
                              <li class="dropdown">
             <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign in</a>
             <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-             <form action="." method="POST">
-               {% csrf_token %}
+             <form action="" method="POST">{% csrf_token %}
                {{ iniciar_sesion.as_p }}
                <input type="submit" value="Iniciar"/>
 
@@ -94,13 +93,9 @@
 	<div class="hero-unit">
 		<p><strong>Registro de Clientes</strong> </p>
 
-        <form action="." method="POST">
-             {% if registrado%}
-                <p class="text-danger">{{ usuario }} ya se encuentra registrado</p>
-            {% endif %}
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Registrarse"/>
+        <form action="" method="POST">{% csrf_token %}
+            {{ formulario.as_p}}
+            <input type="submit" value="Registrar">
         </form>
 
 	</div>

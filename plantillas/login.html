@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html class="not-ie" lang="en">
+<head>
+
+	<!-- Basic meta tags -->
+	<meta charset="utf-8">
+	<title>Trans India</title>
+	<meta name="description" content="Plain is a responsible HTML template with 12-column grid based on popular Twitter Bootstrap framework. This theme is suitable as a clean and easily maintainable template for any business, portfolio or single-project site, with support for mobile devices and latest HTML5 &amp; CSS3 user interface components.">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Styles -->
+	<link href="../estaticos/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="../estaticos/css/font-awesome/font-awesome.css" rel="stylesheet" type="text/css" />
+
+
+	<!-- Web Fonts  -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+
+	<!-- Javascript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="../estaticos/js/jquery-1.7.2.min.js"><\/script>')</script>
+
+	</head>
+<body>
+
+	<!-- Header
+
+	================================================== -->
+	<header id="header">
+
+		<!-- Navigation
+		================================================== -->
+		<nav class="navbar">
+
+			<div class="navbar-inner">
+				<div class="container">
+					<!-- Logo -->
+					<a class="brand" href="/">
+						Trasn India
+
+					</a>
+
+					<ul class="nav">
+						<li><a href="/" title="">Home</a></li>
+
+
+						<li class="dropdown active">
+							<a href="components.html" title="">Nuestra Empresa</a>
+							<!-- Dropdown menu -->
+							<ul>
+								<li><a href="/buses" title="">Buses</a></li>
+						        <li><a href="/conductores" title="">Conductores</a></li>
+
+							</ul>
+						</li>
+                        <li class="dropdown active">
+							<a href="components.html" title="">Servicios</a>
+							<!-- Dropdown menu -->
+							<ul>
+								<li><a href="/billetes" title="">Venta de Billetes</a></li>
+
+
+							</ul>
+						</li>
+						<li><a href="/registro" title="">Sign up</a></li>
+            </div>
+          </li>
+					</ul>
+				</div><!-- end .container -->
+			</div><!-- end .navbar-inner -->
+		</nav>
+
+	</header>
+
+	<!-- Content
+	================================================== -->
+	<section id="content" class="container">
+
+
+	<div class="hero-unit">
+		<p><strong>Loguearse</strong> </p>
+
+        <form action="" method="POST">{% csrf_token %}
+            {{ formulario.as_p}}
+            <input type="submit" value="Iniciar Sesión">
+        </form>
+        <p>{{validacion}}</p>
+	</div>
+
+	</section>
+
+	<!-- Footer
+	================================================== -->
+
+	<footer id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="span4">
+					<a class="brand" href="/">
+						Trans India
+					</a>
+					<p>
+						Sigale que si hay puesto.
+
+					</p>
+				</div>
+				<div class="span4 social-networks">
+					<h3>Encuentranos en:</h3>
+
+					<p>
+						<a class="social-network twitter"></a>
+						<a class="social-network facebook"></a>
+						<a class="social-network linkedin"></a>
+						<a class="social-network dribbble"></a>
+						<a class="social-network pinterest"></a>
+					</p>
+				</div>
+
+					<div class="span4 social-networks">
+					<h3>Somos la mejor empresa de transporte de la india,con mas de 100 años de experiencia.</h3>
+
+
+				</div>
+
+			</div> <!-- end .row -->
+		</div> <!-- end .container -->
+	</footer><!-- end #footer -->
+
+	<footer id="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="span4">
+					&copy; 2014 by <a>Trans India</a>
+				</div>
+				<div class="span4">
+					<p>                             <p>
+
+				</div>
+				<div class="span4">
+					<a href="http://themeforest.net/item/plain/2616790" rel="external" title="">Trans India</a> BY <a title="Michal Šimonfy" rel="external" href="http://virae.org">VIRAE</a>
+					
+				</div>
+			</div> <!-- end .row -->		
+		</div> <!-- end .container -->
+	</footer><!-- end #footer-extra -->
+
+	<!-- Javascript - Placed at the end of the document so the pages load faster 
+	================================================== -->
+
+	<script type="text/javascript" src="../estaticos/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../estaticos/js/jquery.isotope.min.js"></script>
+	<script type="text/javascript" src="../estaticos/js/jquery.touchSwipe.js"></script>
+	<script type="text/javascript" src="../estaticos/js/jquery.hotkeys.min.js" charset='utf-8'></script>
+	<script type="text/javascript" src="../estaticos/js/functions.js"></script>
+	
+</body>
+</html>		
