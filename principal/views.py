@@ -54,25 +54,27 @@ def vista_registro(request):
 
 def vista_login(request):
     if not request.user.is_anonymous():
-        usuario = request.user
-        iniciado = True
-        return render_to_response('index.html', locals(), context_instance=RequestContext(request))
+        return HttpResponseRedirect('/')
     if request.method == 'POST':
         formulario = AuthenticationForm(request.POST)
         if formulario.is_valid():
             username = request.POST['username']
             clave = request.POST['password']
-            acceso  = authenticate(username = username, password = password)
+            acceso  = authenticate(username = username, password = clave)
             if acceso is not None:
                 if acceso.is_active:
                     login(request, acceso)
-                    return HttpResponseRedirect('/')
+                    error = "login"
+                    return render_to_response('login.html', locals())
                 else:
-                    return HttpResponseRedirect('/')
+                    error = "Error en el login"
+                    return render_to_response('login.html', locals())
             else:
-                return HttpResponseRedirect('/')
+                error = "Error en el acceso"
+                return render_to_response('login.html', locals())
     else:
         formulario = AuthenticationForm()
+        
     return render_to_response('login.html', locals(), context_instance=RequestContext(request))
 
 
