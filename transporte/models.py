@@ -100,14 +100,15 @@ class Ciudad(models.Model):
     def __unicode__(self):
         return self.ciudad
 
-class Parada(models.Model):
+class Trayecto(models.Model):
     codigo=models.CharField(max_length=5, primary_key=True)
-    ciudad = models.ForeignKey(Ciudad)
-    hora_llegada = models.TimeField()
-    hora_salida = models.TimeField()
+    ciudad_origen = models.ForeignKey(Ciudad, related_name='Origen')
+    ciudad_destino = models.ForeignKey(Ciudad, related_name='Destino')
+    distancia_trayecto = models.IntegerField(max_length=5, validators=[MinValueValidator(1), MaxValueValidator(99999)])
+    tiempo_estimado = models.IntegerField(max_length=3, validators=[MinValueValidator(1), MaxValueValidator(999)])
 
     def __unicode__(self):
-        return self.codigo
+        return self.origen +" "+ self.destino
 
 class Categoria(models.Model):
     codigo = models.CharField(max_length=5, primary_key=True)
@@ -126,13 +127,11 @@ class Viaje(models.Model):
     codigo = models.CharField(max_length=5, primary_key=True)
     bus_asignado = models.ForeignKey(Autobus)
     categoria = models.ForeignKey(Categoria)
-    origen = models.ForeignKey(Parada, related_name="Origen")
-    destino = models.ForeignKey(Parada, related_name="Destino")
-    tipo = models.CharField(max_length=12, choices=(('Ida', 'Ida'), ('Ida y vuelta', 'Ida y Vuelta')))
-    precio_base = models.IntegerField(max_length=5)
-    precio_total = models.IntegerField(max_length=5)
-    descuento = models.IntegerField(max_length=5, null=True)
+    origen = models.ForeignKey(Ciudad, related_name="Origen Viaje")
+    destino = models.ForeignKey(Ciudad, related_name="Destino Viaje")
     horario = models.ForeignKey(Horario)
+    trayectos = models.ManyToManyField(Trayecto)
+    tipo = models.CharField(max_length=12, choices=(('Ida', 'Ida'), ('Ida y vuelta', 'Ida y Vuelta')))
 
     def __unicode__(self):
         return self.codigo
