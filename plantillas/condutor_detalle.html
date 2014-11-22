@@ -1,175 +1,71 @@
-<!DOCTYPE html>
-<html class="not-ie" lang="en">
-<head>
-
-	<!-- Basic meta tags -->
-	<meta charset="utf-8">
-	<title>Trans India</title>
-	<meta name="description" content="Plain is a responsible HTML template with 12-column grid based on popular Twitter Bootstrap framework. This theme is suitable as a clean and easily maintainable template for any business, portfolio or single-project site, with support for mobile devices and latest HTML5 &amp; CSS3 user interface components.">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- Styles -->
-	<link href="../estaticos/css/style.css" rel="stylesheet" type="text/css" />
-	<link href="../estaticos/css/font-awesome/font-awesome.css" rel="stylesheet" type="text/css" />
-
-
-	<!-- Web Fonts  -->
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
-
-	<!-- Javascript -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="../estaticos/js/jquery-1.7.2.min.js"><\/script>')</script>
-
-	</head>
-<body>
-
-	<!-- Header
-	================================================== -->
-	<header id="header">
-
-		<!-- Navigation
-		================================================== -->
-		<nav class="navbar">
-
-			<div class="navbar-inner">
-				<div class="container">
-					<!-- Logo -->
-					<a class="brand" href="/">
-						Trasn India
-
-					</a>
-
-					<ul class="nav">
-						<li><a href="/" title="">Home</a></li>
-
-
-						<li class="dropdown active">
-							<a href="components.html" title="">Nuestra Empresa</a>
-							<!-- Dropdown menu -->
-							<ul>
-								<li><a href="/buses" title="">Buses</a></li>
-						        <li><a href="/conductores" title="">Conductores</a></li>
-
-							</ul>
-						</li>
-                        <li class="dropdown active">
-							<a href="components.html" title="">Servicios</a>
-							<!-- Dropdown menu -->
-							<ul>
-								<li><a href="/billetes" title="">Venta de Billetes</a></li>
-
-
-							</ul>
-						</li>
-						<li><a href="/registro" title="">Sign up</a></li>
-                             <li class="dropdown">
-            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign in</a>
-            <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-             <form action="." method="POST">
-
-               <input type="submit" value="Iniciar"/>
-             </form>
-
-
-
-
-            </div>
-          </li>
-					</ul>
-				</div><!-- end .container -->
-			</div><!-- end .navbar-inner -->
-		</nav>
-
-	</header>
-
-	<!-- Content
-	================================================== -->
+{%extends 'base.html'%}
+{%block title%}<title>:: {{ cond.nombres }} {{ cond.apellidos }} ::</title>{%endblock%}
+{%block content%}
 	<section id="content" class="container">
-
-	<div class="hero-unit">
-
-        <h1>{{ cond.nombres }}  {{ cond.apellidos }}</h1>
-
-	</div>
-
-	<hr />
-
-	<!-- #blog -->
-
-
-
-			<!-- Example of image blog item
-			================================================== -->
-			<article class="post image-post">
-
-				<!-- entry media -->
-                <p class="ac">
-					<a href="../{{ cond.foto }}" class="">
-					<img src="../{{ cond.foto }}" alt="" width="400" height="400"/>
-				</a>
-				</p>
-
-                </hr>
-
-                <div class="span12">
-                    <h2 class="entry-title">Datos del Conductor :</h2></a>
+		<div class="hero-unit"><h1>{{ cond.nombres }}  {{ cond.apellidos }}</h1></div>
+		<hr />
+		<article class="post image-post">
+	        <p class="ac"><a href="../{{ cond.foto }}" class=""><img src="../{{ cond.foto }}" alt="" width="400" height="400"/></a></p>
+            </hr>
+            <div class="span12">
+                <h2 class="entry-title">Datos del Conductor :</h2></a>
+                <table class="stacked">
+                    <thead>
+                        <tr>
+                            <th>Descripción</th>
+                            <th>Autobus</th>
+                            <th>Salario Base</th>
+                            <th>Horas de Trabajo por Día</th>
+                            <th>Horas de trabajo por Semana:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ cond.descripcion|safe }} </td>
+                            <td>{{ cond.autobus_placa}}</td>
+                            <td>$ {{ cond.sueldo }} </td>
+                            <td>{{ cond.limite_hora_dia }}</td>
+                            <td>{{ cond.limite_hora_semana }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+               	<hr />
+                <h2 class="entry-title">Registro de Horas de Entrada y Salida :</h2></a>
+                {% if registro_entrada_salida|length_is:'0'%}
+                    <p>El Conductor no registra horas de entrada y salida</p>
+                {% else %}
                     <table class="stacked">
                         <thead>
                             <tr>
-                                <th>Descripción</th>
-                                <th>Autobus</th>
-                                <th>Salario</th>
-                                <th>Horas de Trabajo por Día</th>
-                                <th>Horas de trabajo por Semana:</th>
+                                <th>Código</th>
+                                <th>Hora de entrada</th>
+                                <th>Hora de salida</th>
+                                <th>Horas laboradas</th>
+                                <th>Horas Extras</th>
                             </tr>
-
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>{{ cond.descripcion|safe }} </td>
-                                <td>{{ cond.autobus_placa}}</td>
-                                <td>$ {{ cond.sueldo }} </td>
-                                <td>{{ cond.limite_hora_dia }}</td>
-                                <td>{{ cond.limite_hora_semana }}</td>
-                            </tr>
+                        	{% for rea in registro_entrada_salida %}
+	                            <tr>
+	                                <td>{{ rea.codigo }}</td>
+	                                <td>{{rea.fecha_entrada}} {{"-"}} {{ rea.hora_entrada }}</td>
+	                                <td>{{rea.fecha_salida}} {{"-"}} {{ rea.hora_salida }}</td>
+	                                <td>{{ rea.horas_trabajadas  }}</td>
+	                                <td>{{ rea.horas_extras }}</td>
+	                            </tr>
+                         	{% endfor %}
                         </tbody>
                     </table>
-               <hr />
-                    <h2 class="entry-title">Registro de Horas de Entrada y Salida :</h2></a>
-                    {% if registro_entrada_salida|length_is:'0'%}
-                        <p>El Conductor no registra horas de entrada y salida</p>
-                    {% else %}
-                        <table class="stacked">
-                            <thead>
-                                <tr>
-                                    <th>Código</th>
-                                    <th>Hora de entrada</th>
-                                    <th>Hora de salida</th>
-                                    <th>Horas laboradas</th>
-                                    <th>Horas Extras</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                             {% for rea in registro_entrada_salida %}
-                                <tr>
-                                    <td>{{ rea.codigo }}</td>
-                                    <td>{{rea.fecha_entrada}} {{"-"}} {{ rea.hora_entrada }}</td>
-                                    <td>{{rea.fecha_salida}} {{"-"}} {{ rea.hora_salida }}</td>
-                                    <td>{{ rea.horas_trabajadas  }}</td>
-                                    <td>{{ rea.horas_extras }}</td>
-                                </tr>
-                             {% endfor %}
-                            </tbody>
-                        </table>
-                    {% endif %}
                     <hr />
-                    <h2 class="entry-title">Historial de Inasistencias :</h2></a>
-                    {% if historial|length_is:'0' %}
-                        <p>El Conductor No Registra ausencias en el Trabajo</p>
-                    {% else %}
-                        <table class="stacked">
-				        <thead>
+                    <h3 class="entry-title">Sueldo Total: $ {{sueldo_total}}</h3>
+                {% endif %}
+                <hr />
+                <h2 class="entry-title">Historial de Inasistencias :</h2></a>
+                {% if historial|length_is:'0' %}
+                    <p>El Conductor No Registra ausencias en el Trabajo</p>
+                {% else %}
+                    <table class="stacked">
+					    <thead>
                             <tr>
                                 <th>Codigo</th>
                                 <th>Fecha</th>
@@ -186,106 +82,9 @@
                             {% endfor %}
 				        </tbody>
 			        </table>
-                    {% endif %}
-
-
-
-
-
-				</div>
-
-
-
-				<!-- clearfix -->
-				<div class="clr"></div>
-
-			</article><!-- end item -->
-
-			<!-- Example of video blog item
-			================================================== -->
-
-
-
-			
-
-
-			<!-- Pagination
-			================================================== -->
-
-		</div><!-- end .span8 -->
-
-		<!-- Sidebar with widgets
-		================================================== -->
-
-
-	</div><!-- end #blog -->
-
-	<script type="text/javascript" src="js/jflickrfeed.min.js"></script>
+                {% endif %}
+			</div>
+			<div class="clr"></div>
+		</article>
 	</section>
-
-	<!-- Footer
-	================================================== -->
-
-	<footer id="footer">
-		<div class="container">
-			<div class="row">
-				<div class="span4">
-					<a class="brand" href="/">
-						Trans India
-					</a>
-					<p>
-						Sigale que si hay puesto.
-
-					</p>
-				</div>
-				<div class="span4 social-networks">
-					<h3>Encuentranos en:</h3>
-
-					<p>
-						<a class="social-network twitter"></a>
-						<a class="social-network facebook"></a>
-						<a class="social-network linkedin"></a>
-						<a class="social-network dribbble"></a>
-						<a class="social-network pinterest"></a>
-					</p>
-				</div>
-
-					<div class="span4 social-networks">
-					<h3>Somos la mejor empresa de transporte de la india,con mas de 100 años de experiencia.</h3>
-
-
-				</div>
-
-			</div> <!-- end .row -->
-		</div> <!-- end .container -->
-	</footer><!-- end #footer -->
-
-	<footer id="copyright">
-		<div class="container">
-			<div class="row">
-				<div class="span4">
-					&copy; 2014 by <a>Trans India</a>
-				</div>
-				<div class="span4">
-					<p>                             <p>
-
-				</div>
-				<div class="span4">
-					<a href="http://themeforest.net/item/plain/2616790" rel="external" title="">Trans India</a> BY <a title="Michal Šimonfy" rel="external" href="http://virae.org">VIRAE</a>
-
-				</div>
-			</div> <!-- end .row -->
-		</div> <!-- end .container -->
-	</footer><!-- end #footer-extra -->
-
-	<!-- Javascript - Placed at the end of the document so the pages load faster
-	================================================== -->
-
-	<script type="text/javascript" src="../estaticos/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../estaticos/js/jquery.isotope.min.js"></script>
-	<script type="text/javascript" src="../estaticos/js/jquery.touchSwipe.js"></script>
-	<script type="text/javascript" src="../estaticos/js/jquery.hotkeys.min.js" charset='utf-8'></script>
-	<script type="text/javascript" src="../estaticos/js/functions.js"></script>
-
-</body>
-</html>
+{%endblock%}

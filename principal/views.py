@@ -71,6 +71,16 @@ def vista_conductor_id(request,id_cond):
     cond=Conductor.objects.get(identificacion=id_cond)
     registro_entrada_salida=HoraEntradaSalida.objects.filter(conductor=id_cond)
     historial=HistorialConductor.objects.filter(conductor=id_cond)
+
+    def _sueldo_total():
+        sueldo_total = 0
+        sum_horas_extras = 0
+        for rea in registro_entrada_salida:
+            sum_horas_extras = sum_horas_extras + rea.horas_extras
+        sueldo_total = cond.sueldo + sum_horas_extras * 25000
+        return sueldo_total
+        
+    sueldo_total = _sueldo_total
     return render_to_response('condutor_detalle.html',locals(),context_instance=RequestContext(request))
 
 def vista_bus_placa(request,p):
@@ -82,42 +92,6 @@ def vista_bus_placa(request,p):
 def comprar_viaje(request, cat):
     viaje=Viaje.objects.filter(categoria=cat)
     return render_to_response('comprar_viaje.html',locals(),context_instance=RequestContext(request))
-
-def vista_registro(request):
-    if request.method == 'POST':
-        formulario = UserCreationForm(request.POST)
-        if formulario.is_valid():
-            formulario.save()
-            return HttpResponseRedirect('/')
-    else:
-        formulario = UserCreationForm()
-        return render_to_response('registro.html',locals(),context_instance=RequestContext(request))
-
-def vista_login(request):
-    if not request.user.is_anonymous():
-        return HttpResponseRedirect('/')
-    if request.method == 'POST':
-        formulario = AuthenticationForm(request.POST)
-        if formulario.is_valid():
-            username = request.POST['username']
-            clave = request.POST['password']
-            acceso  = authenticate(username = username, password = clave)
-            if acceso is not None:
-                if acceso.is_active:
-                    login(request, acceso)
-                    error = "login"
-                    return render_to_response('login.html', locals())
-                else:
-                    error = "Error en el login"
-                    return render_to_response('login.html', locals())
-            else:
-                error = "Error en el acceso"
-                return render_to_response('login.html', locals())
-    else:
-        formulario = AuthenticationForm()
-        
-    return render_to_response('login.html', locals(), context_instance=RequestContext(request))
-
 
 def vista_billetes(request):
     categoria=Categoria.objects.all()

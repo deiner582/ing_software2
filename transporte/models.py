@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from ckeditor.fields import RichTextField
 from django.core.validators import *
@@ -17,11 +18,11 @@ class Autobus(models.Model):
     placa = models.CharField(max_length=6, primary_key=True)
     marca = models.CharField(max_length=50)
     foto = models.ImageField(upload_to="estaticos/img/autobuses")
-    peso = models.IntegerField(max_length=5)
+    peso = models.IntegerField(validators=[MinValueValidator(15000), MaxValueValidator(18000)])
     consumo = models.CharField(max_length=50)
     velocidad_max = models.IntegerField(validators=[MinValueValidator(000), MaxValueValidator(250)])
-    precio = models.IntegerField(max_length=9)
-    puesto_bus = models.IntegerField(max_length=2)
+    precio = models.IntegerField(validators=[MinValueValidator(50000000), MaxValueValidator(200000000)])
+    puesto_bus = models.IntegerField(validators=[MinValueValidator(26), MaxValueValidator(32)])
 
     def __unicode__(self):
         return self.placa
@@ -50,8 +51,16 @@ class Conductor(Persona):
     foto = models.ImageField(upload_to="estaticos/img/conductor")
     descripcion = RichTextField()
     limite_hora_dia = models.IntegerField(max_length=2)
-    limite_hora_semana = models.IntegerField(max_length=8)
-    sueldo = models.IntegerField(max_length=7)
+    
+    def _horas_semanales(self):
+        return self.limite_hora_dia * 5
+
+    limite_hora_semana = property(_horas_semanales)
+
+    def _sueldo_base(self):
+        return self.limite_hora_semana * 4 * 25000
+
+    sueldo = property(_sueldo_base)
 
     def __unicode__(self):
         return (self.nombres + " "+ self.apellidos)
@@ -109,14 +118,6 @@ class Categoria(models.Model):
     def __unicode__(self):
         return self.nombre
 
-class Usuario(Persona):
-    username = models.CharField(max_length=15)
-    password = models.CharField(max_length=16)
-    puntosAcumulados = models.IntegerField(max_length=5)
-
-    def __unicode__(self):
-        return (self.nombres +" "+ self.apellidos)
-
 class Horario(models.Model):
     codigo = models.CharField(max_length=5, primary_key=True)
     hora = models.TimeField()
@@ -139,7 +140,7 @@ class Viaje(models.Model):
 class Billete(models.Model):
     codigo = models.TextField(max_length=5, primary_key=True)
     viaje = models.ForeignKey(Viaje)
-    usuario = models.ForeignKey(Usuario)
+    usuario = models.ForeignKey(User)
     fecha_viaje = models.DateField()
 
     def __unicode__(self):

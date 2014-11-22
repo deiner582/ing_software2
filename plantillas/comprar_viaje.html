@@ -1,263 +1,48 @@
-<!DOCTYPE html>
-<html class="not-ie" lang="en">
-<head>
-
-	<!-- Basic meta tags -->
-	<meta charset="utf-8">
-	<title>Trans India</title>
-	<meta name="description" content="Plain is a responsible HTML template with 12-column grid based on popular Twitter Bootstrap framework. This theme is suitable as a clean and easily maintainable template for any business, portfolio or single-project site, with support for mobile devices and latest HTML5 &amp; CSS3 user interface components.">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- Styles -->
-	<link href="../estaticos/css/style.css" rel="stylesheet" type="text/css" />
-	<link href="../estaticos/css/font-awesome/font-awesome.css" rel="stylesheet" type="text/css" />
-
-
-	<!-- Web Fonts  -->
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
-
-	<!-- Javascript -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="../estaticos/js/jquery-1.7.2.min.js"><\/script>')</script>
-
-	</head>
-<body>
-
-	<!-- Header
-
-	================================================== -->
-	<header id="header">
-
-		<!-- Navigation
-		================================================== -->
-		<nav class="navbar">
-
-			<div class="navbar-inner">
-				<div class="container">
-					<!-- Logo -->
-					<a class="brand" href="/">
-						Trasn India
-
-					</a>
-
-					<ul class="nav">
-						<li><a href="/" title="">Home</a></li>
-
-
-						<li class="dropdown active">
-							<a href="components.html" title="">Nuestra Empresa</a>
-							<!-- Dropdown menu -->
-							<ul>
-								<li><a href="/buses" title="">Buses</a></li>
-						        <li><a href="/conductores" title="">Conductores</a></li>
-
-							</ul>
-						</li>
-                        <li class="dropdown active">
-							<a href="components.html" title="">Servicios</a>
-							<!-- Dropdown menu -->
-							<ul>
-								<li><a href="/billetes" title="">Venta de Billetes</a></li>
-
-
-							</ul>
-						</li>
-						<li><a href="/registro" title="">Sign up</a></li>
-                             <li class="dropdown">
-            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign in</a>
-            <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-             <form action="." method="POST">
-
-               <input type="submit" value="Iniciar"/>
-             </form>
-
-
-
-
-            </div>
-          </li>
-					</ul>
-				</div><!-- end .container -->
-			</div><!-- end .navbar-inner -->
-		</nav>
-
-	</header>
-
-	<!-- Content
-	================================================== -->
+{%extends 'base.html'%}
+{%block title%}<title>Viaje: </title>{%endblock%}
+{%block content%}
 	<section id="content" class="container">
-
-	<hr />
-
-	<!-- #blog -->
-
-
-
-			<!-- Example of image blog item
-			================================================== -->
-			<article class="post image-post">
-
-
-
-                </hr>
-
-                <div class="span12">
-
-
-
-				<!-- entry body -->
-
-
-                    <h2 class="entry-title">
-							Viajes displonibles :
-						</h2>
-					</a>
-
-                     {% if viaje|length_is:'0'%}
-                       <div class="alert alert-success">
-				     No hay viajes disponibles para esta categoria.
-			         </div>
-                 {% else %}
+		<hr />
+		<article class="post image-post">
+	        </hr>
+            <div class="span12">
+				<h2 class="entry-title">Viajes displonibles :</h2>
+				</a>
+                {% if viaje|length_is:'0'%}
+                    <div class="alert alert-success">No hay viajes disponibles para esta categoria.</div>
+                {% else %}
 					<table class="stacked">
-				<thead>
-					<tr>
-						<th>Codigo</th>
-                        <th>Origen - Destino</th>
-                        <th>Tipo </th>
-					    <th>Bus</th>
-
-                        <th>Precio base</th>
-                        <th>Precio extra</th>
-                        <th>Precio total</th>
-                        <th>Comprar</th>
-
-
-
-					</tr>
-				</thead>
-				<tbody>
-
-
-
-                     {% for v in viaje %}
-                   	<tr>
-						<td>{{ v.codigo }}</td>
-                        <td>{{ v.origen }} - {{ v.destino }}</td>
-						<td>{{ v.tipo }}</td>
-                        <td>{{ v.bus_asignado }}</td>
-                        <td>{{ v.precio_base }}</td>
-                        <td>{{ v.precio_total }}</td>
-                        <td>{{ v.precio_total|add:v.precio_base }}</td>
-                        <td><input type="checkbox"></td>
-
-
-					</tr>
-                   {% endfor %}
-                 {% endif %}
-
-				</tbody>
-			</table>
-
-                    <hr />
-
-
-
-
-				</div>
-
-
-
-				<!-- clearfix -->
-				<div class="clr"></div>
-
-			</article><!-- end item -->
-
-			<!-- Example of video blog item
-			================================================== -->
-
-
-
-			
-
-
-			<!-- Pagination
-			================================================== -->
-
-		</div><!-- end .span8 -->
-
-		<!-- Sidebar with widgets
-		================================================== -->
-
-
-	</div><!-- end #blog -->
-
-	<script type="text/javascript" src="js/jflickrfeed.min.js"></script>
+						<thead>
+							<tr>
+								<th>Codigo</th>
+		                        <th>Origen - Destino</th>
+		                        <th>Tipo </th>
+							    <th>Bus</th>
+		                        <th>Precio base</th>
+		                        <th>Precio extra</th>
+		                        <th>Precio total</th>
+		                        <th>Comprar</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for v in viaje %}
+			                   	<tr>
+									<td>{{ v.codigo }}</td>
+			                        <td>{{ v.origen }} - {{ v.destino }}</td>
+									<td>{{ v.tipo }}</td>
+			                        <td>{{ v.bus_asignado }}</td>
+			                        <td>{{ v.precio_base }}</td>
+			                        <td>{{ v.precio_total }}</td>
+			                        <td>{{ v.precio_total|add:v.precio_base }}</td>
+			                        <td><input type="checkbox"></td>
+								</tr>
+		                   {% endfor %}
+		                </tbody>
+		            </table>
+		            <hr />
+                {% endif %}
+			</div>
+			<div class="clr"></div>
+		</article>
 	</section>
-
-	<!-- Footer
-	================================================== -->
-
-	<footer id="footer">
-		<div class="container">
-			<div class="row">
-				<div class="span4">
-					<a class="brand" href="/">
-						Trans India
-					</a>
-					<p>
-						Sigale que si hay puesto.
-
-					</p>
-				</div>
-				<div class="span4 social-networks">
-					<h3>Encuentranos en:</h3>
-
-					<p>
-						<a class="social-network twitter"></a>
-						<a class="social-network facebook"></a>
-						<a class="social-network linkedin"></a>
-						<a class="social-network dribbble"></a>
-						<a class="social-network pinterest"></a>
-					</p>
-				</div>
-
-					<div class="span4 social-networks">
-					<h3>Somos la mejor empresa de transporte de la india,con mas de 100 años de experiencia.</h3>
-
-
-				</div>
-
-			</div> <!-- end .row -->
-		</div> <!-- end .container -->
-	</footer><!-- end #footer -->
-
-	<footer id="copyright">
-		<div class="container">
-			<div class="row">
-				<div class="span4">
-					&copy; 2014 by <a>Trans India</a>
-				</div>
-				<div class="span4">
-					<p>                             <p>
-
-				</div>
-				<div class="span4">
-					<a href="http://themeforest.net/item/plain/2616790" rel="external" title="">Trans India</a> BY <a title="Michal Šimonfy" rel="external" href="http://virae.org">VIRAE</a>
-
-				</div>
-			</div> <!-- end .row -->
-		</div> <!-- end .container -->
-	</footer><!-- end #footer-extra -->
-
-	<!-- Javascript - Placed at the end of the document so the pages load faster
-	================================================== -->
-
-	<script type="text/javascript" src="../estaticos/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../estaticos/js/jquery.isotope.min.js"></script>
-	<script type="text/javascript" src="../estaticos/js/jquery.touchSwipe.js"></script>
-	<script type="text/javascript" src="../estaticos/js/jquery.hotkeys.min.js" charset='utf-8'></script>
-	<script type="text/javascript" src="../estaticos/js/functions.js"></script>
-
-</body>
-</html>
+{%endblock%}

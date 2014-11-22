@@ -1,217 +1,36 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html class="not-ie" lang="en" xmlns="http://www.w3.org/1999/html">
-<head>
-
-	<!-- Basic meta tags -->
-	<meta charset="utf-8">
-	<title>Trans India</title>
-	<meta name="description" content="Plain is a responsible HTML template with 12-column grid based on popular Twitter Bootstrap framework. This theme is suitable as a clean and easily maintainable template for any business, portfolio or single-project site, with support for mobile devices and latest HTML5 &amp; CSS3 user interface components.">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- Styles -->
-	<link href="../estaticos/css/style.css" rel="stylesheet" type="text/css" />
-	<link href="../estaticos/css/font-awesome/font-awesome.css" rel="stylesheet" type="text/css" />
-
-
-	<!-- Web Fonts  -->
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
-
-	<!-- Javascript -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="../estaticos/js/jquery-1.7.2.min.js"><\/script>')</script>
-
-	</head>
-<body>
-
-	<!-- Header
-
-	================================================== -->
-	<header id="header">
-
-		<!-- Navigation
-		================================================== -->
-		<nav class="navbar">
-
-			<div class="navbar-inner">
-				<div class="container">
-					<!-- Logo -->
-					<a class="brand" href="/">
-						Trasn India
-
-					</a>
-
-					<ul class="nav">
-						<li><a href="/" title="">Home</a></li>
-
-
-						<li class="dropdown active">
-							<a href="components.html" title="">Nuestra Empresa</a>
-							<!-- Dropdown menu -->
-							<ul>
-								<li><a href="/buses" title="">Buses</a></li>
-						        <li><a href="/conductores" title="">Conductores</a></li>
-
-							</ul>
-						</li>
-                        <li class="dropdown active">
-							<a href="components.html" title="">Servicios</a>
-							<!-- Dropdown menu -->
-							<ul>
-								<li><a href="/billetes" title="">Venta de Billetes</a></li>
-
-
-							</ul>
-						</li>
-						<li><a href="/registro" title="">Sign up</a></li>
-                             <li class="dropdown">
-            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign in</a>
-            <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-             <form action="." method="POST">
-               {% csrf_token %}
-               {{ iniciar_sesion.as_p }}
-               <input type="submit" value="Iniciar"/>
-             </form>
-
-
-
-
-            </div>
-          </li>
-					</ul>
-				</div><!-- end .container -->
-			</div><!-- end .navbar-inner -->
-		</nav>
-
-	</header>
-	<!-- Content
-	================================================== -->
+{%extends 'base.html'%}
+{%block title %}<title>Lista de Buses</title>{%endblock%}
+{%block content%}
 	<section id="content" class="container">
 
-    <div class="hero-unit">
-		<p>Nuestros Autobuses</p>
-		<hr />
-	</div>
-
-
-
-
-	<div id="portfolio">
-
-     {% if buses|length_is:"0" %}
-
-           <div class="alert alert-success">
-				Por el momento no hay autobuses registramos en nuestro sistema.
-			</div>
-           {% else %}
-		{% for b in buses %}
-
-		<!-- portfolio items -->		
-		<section class="row" id="portfolio-items">
-
-			<!-- portfolio item-->
-			<article class="span6 project" data-tags="design">
-
-				<div class="thumbnail link">
-					<!-- image -->
-					<a href="project.html" title="">
-						<img alt="" src= "../{{ b.foto }}" height="256" width="256">
-
-					</a>
-					<!-- description -->
-					<div class="project-description">
-						<!-- icon -->
-
-						<!-- name -->
-                        <span class="label label-success">Placa :</span>
-						<b class="project-name">{{ b.placa }}</b>
-                         <br>
-                        <br>
-                        <span class="label label-success">Marca :</span>
-						<b class="project-name">{{ b.marca }}</b>
-					</div>
-                    <p class="ac">
-					<a class="button green" href="/placa/{{ b.placa }}">Ver mas</a>
-				    </p>
-
-				</div>
-
-			</article>
-			<!-- end portfolio item-->
-
-        {% endfor %}
-
-		</section>
-
-    {% endif %}
-	</div>
+	    <div class="hero-unit">
+			<p>Nuestros Autobuses</p>
+			<hr />
+		</div>
+		<div id="portfolio">
+    		{% if buses|length_is:"0" %}
+           		<div class="alert alert-success">
+				Por el momento no hay autobuses registramos en nuestro sistema.</div>
+           	{% else %}
+				{% for b in buses %}		
+					<section class="row" id="portfolio-items">
+						<article class="span6 project" data-tags="design">
+							<div class="thumbnail link">
+								<a href="project.html" title=""><img alt="" src= "../{{ b.foto }}" height="256" width="256"></a>
+								<div class="project-description">
+	                        		<span class="label label-success">Placa :</span>
+									<b class="project-name">{{ b.placa }}</b>
+	                         		<br>
+	                        		<br>
+	                        		<span class="label label-success">Marca :</span>
+									<b class="project-name">{{ b.marca }}</b>
+								</div>
+	                    		<p class="ac"><a class="button green" href="/placa/{{ b.placa }}">Ver mas</a></p>
+							</div>
+						</article>
+					</section>
+	        	{% endfor %}
+    		{% endif %}
+		</div>
 	</section>
-
-	<!-- Footer
-	================================================== -->
-
-
-	<footer id="footer">
-		<div class="container">
-			<div class="row">
-				<div class="span4">
-					<a class="brand" href="/">
-						Trans India
-					</a>
-					<p>
-						Sigale que si hay puesto.
-
-					</p>
-				</div>
-				<div class="span4 social-networks">
-					<h3>Encuentranos en:</h3>
-
-					<p>
-						<a class="social-network twitter"></a>
-						<a class="social-network facebook"></a>
-						<a class="social-network linkedin"></a>
-						<a class="social-network dribbble"></a>
-						<a class="social-network pinterest"></a>
-					</p>
-				</div>
-
-					<div class="span4 social-networks">
-					<h3>Somos la mejor empresa de transporte de la india,con mas de 100 años de experiencia.</h3>
-
-
-				</div>
-
-			</div> <!-- end .row -->
-		</div> <!-- end .container -->
-	</footer><!-- end #footer -->
-
-	<footer id="copyright">
-		<div class="container">
-			<div class="row">
-				<div class="span4">
-					&copy; 2014 by <a>Trans India</a>
-				</div>
-				<div class="span4">
-					<p>                             <p>
-
-				</div>
-				<div class="span4">
-					<a href="http://themeforest.net/item/plain/2616790" rel="external" title="">Trans India</a> BY <a title="Michal Šimonfy" rel="external" href="http://virae.org">VIRAE</a>
-					
-				</div>
-			</div> <!-- end .row -->		
-		</div> <!-- end .container -->
-	</footer><!-- end #footer-extra -->
-
-	<!-- Javascript - Placed at the end of the document so the pages load faster 
-	================================================== -->
-
-	<script type="text/javascript" src="../estaticos/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../estaticos/js/jquery.isotope.min.js"></script>
-	<script type="text/javascript" src="../estaticos/js/jquery.touchSwipe.js"></script>
-	<script type="text/javascript" src="../estaticos/js/jquery.hotkeys.min.js" charset='utf-8'></script>
-	<script type="text/javascript" src="../estaticos/js/functions.js"></script>
-	
-</body>
-</html>		
+{%endblock%}
