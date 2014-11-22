@@ -10,13 +10,54 @@ from forms import *
 
 # Create your views here.
 
-def vista_index(request):
-    if not request.user.is_anonymous():
-        usuario = request.user
-        iniciado = True
+def index(request):
+    return render_to_response('base.html',locals(),context_instance=RequestContext(request))
+
+def registrar(request):
+    if request.method == 'POST':
+        form = FormularioRegistro(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data["username"]
+            password = form.cleaned_data["password"]
+            email = form.cleaned_data["email"]
+            first_name = form.cleaned_data["first_name"]
+            last_name = form.cleaned_data["last_name"]
+
+            user = User.objects.create_user(username, email, password)
+            user.first_name = first_name
+            user.last_name = last_name
+            user.save()
+            return HttpResponseRedirect(reverse('index'))
     else:
-        iniciado = False
-    return render_to_response('index.html', locals(), context_instance=RequestContext(request))
+        form = FormularioRegistro()
+    data = {'form': form,}
+    return render_to_response('registrarse.html', data, context_instance=RequestContext(request))
+
+def loguear(request):
+    if request.method == 'POST':
+        form = FormularioLogin(request.POST)
+        if form.is_valid():
+            username = request.POST['usuario']
+            password = request.POST['contrasena']
+            resultado = "Formulario Valido"
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    return HttpResponseRedirect('/')
+                else:
+                     resultado = "Usuario no Logueado"
+            else:
+                 resultado = "Error de Usuario o Contrasena"
+        else:
+            resultado = "Formulario en los Datos del  Formulario"
+    else:
+        form = FormularioLogin()
+    return render_to_response('login.html', locals(), context_instance=RequestContext(request))
+
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect('/')
 
 def vista_buses(request):
     buses=Autobus.objects.all()
