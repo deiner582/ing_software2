@@ -108,7 +108,7 @@ class Trayecto(models.Model):
     tiempo_estimado = models.IntegerField(max_length=3, validators=[MinValueValidator(1), MaxValueValidator(999)])
 
     def __unicode__(self):
-        return self.origen +" "+ self.destino
+        return "{0} - {1}".format(self.ciudad_origen,self.ciudad_destino)
 
 class Categoria(models.Model):
     codigo = models.CharField(max_length=5, primary_key=True)
@@ -122,6 +122,9 @@ class Categoria(models.Model):
 class Horario(models.Model):
     codigo = models.CharField(max_length=5, primary_key=True)
     hora = models.TimeField()
+
+    def __unicode__(self):
+        return "{0}".format(self.hora)
 
 class Viaje(models.Model):
     codigo = models.CharField(max_length=5, primary_key=True)
