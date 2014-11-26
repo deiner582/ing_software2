@@ -136,8 +136,24 @@ class Viaje(models.Model):
     trayectos = models.ManyToManyField(Trayecto)
     tipo = models.CharField(max_length=12, choices=(('Ida', 'Ida'), ('Ida y vuelta', 'Ida y Vuelta')))
 
+    def _precio_base(self):
+        sum_tayectos = 0
+        for t in self.trayectos.all():
+            sum_tayectos = sum_tayectos + t.distancia_trayecto
+        return sum_tayectos * 500
+
+    precio_base = property(_precio_base)
+
+    def _precio_total(self):
+        sum_tayectos = 0
+        for t in self.trayectos.all():
+            sum_tayectos = sum_tayectos + t.distancia_trayecto
+        return sum_tayectos * 500 + self.categoria.costo
+
+    precio_total = property(_precio_total)
+
     def __unicode__(self):
-        return self.codigo
+        return "{0} - {1}".format(self.origen,self.destino)
 
 class Billete(models.Model):
     codigo = models.TextField(max_length=5, primary_key=True)
